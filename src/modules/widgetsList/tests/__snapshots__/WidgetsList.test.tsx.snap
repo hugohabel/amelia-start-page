@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Widgets List matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="widgetsList"
+  >
+    <h2
+      class="widgetsListTitle"
+    >
+      New widget
+    </h2>
+    <p
+      class="widgetsListSubtitle"
+    >
+      Select a widget from the list below
+    </p>
+    <div
+      class="widgetsListItem"
+      data-testid="countdown"
+    >
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M6 2v6h.01L6 8.01 10 12l-4 4 .01.01H6V22h12v-5.99h-.01L18 16l-4-4 4-3.99-.01-.01H18V2H6zm10 14.5V20H8v-3.5l4-4 4 4zm-4-5l-4-4V4h8v3.5l-4 4z"
+        />
+      </svg>
+      <span>
+        Countdown
+      </span>
+    </div>
+    <div
+      class="widgetsListItem widgetsListItemUpcoming"
+      data-testid="weather"
+    >
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M6.76 4.84l-1.8-1.79-1.41 1.41 1.79 1.79zM1 10.5h3v2H1zM11 .55h2V3.5h-2zm8.04 2.495l1.408 1.407-1.79 1.79-1.407-1.408zm-1.8 15.115l1.79 1.8 1.41-1.41-1.8-1.79zM20 10.5h3v2h-3zm-8-5c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm-1 4h2v2.95h-2zm-7.45-.96l1.41 1.41 1.79-1.8-1.41-1.41z"
+        />
+      </svg>
+      <span>
+        Weather
+      </span>
+      <span
+        class="widgetsListItemUpcomingTitle"
+      >
+        Upcoming!
+      </span>
+    </div>
+    <div
+      class="widgetsListItemHidden"
+      data-testid="timezone"
+    >
+      <svg
+        aria-hidden="true"
+        class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm.5-13H11v6l5.2 3.2.8-1.3-4.5-2.7V7z"
+        />
+      </svg>
+      <span>
+        Timezone Converter
+      </span>
+    </div>
+  </div>
+</DocumentFragment>
+`;

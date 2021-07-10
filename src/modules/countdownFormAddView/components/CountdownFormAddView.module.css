@@ -1,0 +1,35 @@
+/* Go Back */
+
+.backContainer {
+  display: flex;
+  margin-bottom: 16px;
+  align-items: center;
+  cursor: pointer;
+}
+.backContainer > svg {
+  color: #2D3A99;
+}
+.backContainer > span {
+  margin-left: 8px;
+  font-size: 12px;
+}
+.backContainer:hover > svg {
+  color: #FFA92B;
+}
+
+/* End Go Back */
+
+/* Title + Subtitle */
+
+.title {
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #2D3A99;
+  letter-spacing: -1;
+}
+.subtitle {
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+
+/* Title + Subtitle */

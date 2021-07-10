@@ -1,0 +1,43 @@
+/* Side Bar */
+
+.sidebar {
+  background-color: #F9F9F9;
+  width: 0;
+  height: 100vh;
+  box-shadow: -3px 0px 8px 2px rgba(201, 201, 201, 0.75) inset;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem 0;
+  transition: width 0.3s;
+  position: relative;
+}
+.isSidebarOpen {
+  width: 375px;
+  transition: width 0.5s;
+}
+.sidebarInnerContainer {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  opacity: 0;
+}
+.sidebarInnerContainerOpen {
+  opacity: 1;
+  transition: opacity;
+  transition-delay: 0.5s;
+}
+.sidebarCloseIcon {
+  display: none;
+}
+.isSidebarOpen .sidebarCloseIcon {
+  display: block;
+  width: 16px;
+  position: absolute;
+  right: 16px;
+  top: 16px;
+  cursor: pointer;
+}
+.isSidebarOpen .sidebarCloseIcon:hover {
+  color: #2D3A99;
+}
+
+/* End Side Bar */

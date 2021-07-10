@@ -1,0 +1,39 @@
+/* Main Styles */
+
+.mainContainer {
+  background-color: #FFA92B;
+  border-radius: 15px;
+  box-shadow: 0px 10px 13px -7px #BABABA, 5px 5px 15px 5px rgba(0,0,0,0);
+  display: flex;
+  margin: 0 25px 25px 0;
+  padding: 16px;
+  position: relative;
+  width: 343px;
+}
+
+/* End Main Styles */
+
+/* Actions */
+
+.actionRemove {
+  bottom: 3px;
+  cursor: pointer;
+  position: absolute;
+  right: 12px;
+  width: 12px;
+}
+.actionRemove:hover {
+  color: #2D3A99;
+}
+.actionEdit {
+  top: 3px;
+  cursor: pointer;
+  position: absolute;
+  right: 12px;
+  width: 12px;
+}
+.actionEdit:hover {
+  color: #2D3A99;
+}
+
+/* End Actions */

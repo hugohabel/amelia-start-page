@@ -1,0 +1,50 @@
+/* Widgets List */
+
+.widgetsListItem {
+  background: #FFFFFF;
+  padding: 15px 25px;
+  border-radius: 15px;
+  line-height: 20px;
+  display: flex;
+  cursor: pointer;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+}
+.widgetsListItem:hover {
+  border: 1px solid #2D3A99;
+}
+.widgetsListItem > svg {
+  color: #F3AC4A;
+  margin-right: 8px;
+}
+.widgetsListItemHidden {
+  display: none;
+}
+.widgetsListItemUpcoming {
+  color: #CCCCCC;
+  cursor: auto;
+}
+.widgetsListItemUpcoming > svg {
+  color: #FAD299;
+}
+.widgetsListItemUpcomingTitle {
+  color: #2D3A99;
+  margin-left: 10px;
+  background: #FFEACA;
+  padding: 0px 8px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.widgetsListTitle {
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #2D3A99;
+  letter-spacing: -1;
+}
+.widgetsListSubtitle {
+  margin-bottom: 20px;
+  font-size: 12px;
+}
+
+/* End Widgets List */

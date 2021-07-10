@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Countdown Form matches snapshot 1`] = `
+<DocumentFragment>
+  <form
+    autocomplete="off"
+  >
+    <input
+      id="eventName"
+      name="eventName"
+      placeholder="Event name"
+      type="text"
+      value=""
+    />
+    <button
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</DocumentFragment>
+`;
