@@ -31,4 +31,4 @@ jobs:
         
       # Runs Tests
       - name: Run yarn test
-        run: yarn test --watchAll=false
+        run: yarn test
