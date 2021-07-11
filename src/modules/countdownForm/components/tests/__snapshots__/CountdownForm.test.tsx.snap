@@ -12,6 +12,13 @@ exports[`Countdown Form matches snapshot 1`] = `
       type="text"
       value=""
     />
+    <input
+      id="eventDate"
+      name="eventDate"
+      placeholder="Event date"
+      type="date"
+      value=""
+    />
     <button
       type="submit"
     >

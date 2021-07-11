@@ -3,6 +3,7 @@ import React from 'react';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { v4 as uuidv4 } from 'uuid';
+import dayjs from 'dayjs';
 
 // Internal Dependencies
 import { useAppDispatch } from '../../../common/contexts/AppState';
@@ -16,11 +17,14 @@ function CountdownForm() {
   const formik = useFormik({
     initialValues: {
       eventName: '',
+      eventDate: '',
     },
     validationSchema: Yup.object({
       eventName: Yup.string()
         .min(2, 'Must be 2 characters or more')
-        .required('Event name is required')
+        .required('Event name is required'),
+      eventDate: Yup.string()
+        .required('Event date is required')
     }),
     onSubmit: values => {
       dispatch({
@@ -28,7 +32,7 @@ function CountdownForm() {
         event: {
           id: uuidv4(),
           name: values.eventName,
-          date: '2021-08-10T05:00:00.000Z',
+          date: dayjs(values.eventDate).toISOString(),
           background: ''
         }
       });
@@ -42,6 +46,8 @@ function CountdownForm() {
   return (
     <>
       <form onSubmit={formik.handleSubmit} autoComplete="off">
+
+        { /* Event Name + Error Display */ }
         <input 
           type="text" 
           id="eventName"
@@ -53,6 +59,21 @@ function CountdownForm() {
         {formik.touched.eventName && formik.errors.eventName ? (
           <div className={styles.formError}>{formik.errors.eventName}</div>
         ) : null}
+        { /* End Event Name + Error Display */ }
+
+        { /* Event Date + Error Display */ }
+        <input 
+          type="date" 
+          id="eventDate"
+          name="eventDate"
+          placeholder="Event date"
+          onChange={formik.handleChange}
+          value={formik.values.eventDate}
+        />
+        {formik.touched.eventDate && formik.errors.eventDate ? (
+          <div className={styles.formError}>{formik.errors.eventDate}</div>
+        ) : null}
+        { /* End Event Date + Error Display */ }
         
         <button type="submit">Submit</button>
       </form>

@@ -15,6 +15,7 @@ let mockAppDispatch: ReturnType<typeof useAppDispatch>;
 
 // Mocked Values
 const EVENTNAMEVALUE = 'Christmas';
+const EVENTDATEVALUE = '2021-12-12';
 
 describe('Countdown Form', () => {
   it('matches snapshot', async () => {
@@ -47,8 +48,13 @@ describe('Countdown Form', () => {
       const eventNameInputElement = await component.findByPlaceholderText('Event name');
       expect(eventNameInputElement).toBeInTheDocument();
 
+      // Get Event Date Input
+      const eventDateInputElement = await component.findByPlaceholderText('Event date');
+      expect(eventDateInputElement).toBeInTheDocument();
+
       // Set Form Values
       fireEvent.change(eventNameInputElement, { target: { value: EVENTNAMEVALUE } });
+      fireEvent.change(eventDateInputElement, { target: { value: EVENTDATEVALUE } });
 
       // Trigger Click
       fireEvent.click(submitButtonElement);
@@ -74,6 +80,25 @@ describe('Countdown Form', () => {
 
       // Get Event Name Error
       const eventNameErrorElement = await component.findByText('Event name is required');
+      expect(eventNameErrorElement).toBeInTheDocument();
+    });
+
+    it('displays validation error when clicking on the submit button with empty event date', async () => {
+      const component = render(
+        <AppStateProvider>
+          <CountdownForm />
+        </AppStateProvider>
+      );
+
+      // Get Submit Button
+      const submitButtonElement = await component.findByRole('button', { name: 'Submit' });
+      expect(submitButtonElement).toBeInTheDocument();
+
+      // Trigger Click
+      fireEvent.click(submitButtonElement);
+
+      // Get Event Name Error
+      const eventNameErrorElement = await component.findByText('Event date is required');
       expect(eventNameErrorElement).toBeInTheDocument();
     });
   });
