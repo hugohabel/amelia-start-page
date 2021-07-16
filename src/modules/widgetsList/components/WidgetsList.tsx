@@ -6,6 +6,7 @@ import WatchLaterOutlinedIcon from '@material-ui/icons/WatchLaterOutlined';
 // Internal Dependencies
 import { WIDGETS_LIST } from '../../../common/constants';
 import { useAppDispatch } from '../../../common/contexts/AppState';
+import { ActiveView } from '../../../common/types/AppState';
 
 // Styles
 import styles from './WidgetsList.module.css';
@@ -36,7 +37,7 @@ function WidgetsList() {
   function handleListItemClick(widgetName: string) {
     dispatch({
       type: 'setActiveView',
-      activeView: 'add_countdown'
+      activeView: `add_${widgetName}` as ActiveView,
     });
   }
 

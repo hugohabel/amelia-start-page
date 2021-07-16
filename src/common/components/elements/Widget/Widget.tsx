@@ -11,7 +11,7 @@ import styles from './Widget.module.css';
 // Types
 type Props = {
   children: JSX.Element;
-  style: any;
+  style?: any;
   uuid: string;
   widgetType: string;
   editAction: boolean;

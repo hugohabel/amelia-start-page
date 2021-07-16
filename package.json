@@ -7,6 +7,7 @@
     "@material-ui/icons": "^4.11.2",
     "dayjs": "^1.10.6",
     "formik": "^2.2.9",
+    "gh-pages": "^3.2.3",
     "immer": "^9.0.5",
     "normalize.css": "^8.0.1",
     "react": "^17.0.2",

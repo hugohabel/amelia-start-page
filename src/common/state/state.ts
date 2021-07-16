@@ -2,7 +2,7 @@
 import produce, { enableES5 } from 'immer';
 
 // Internal Dependencies
-import { AppAction, AppState } from '../types/AppState';
+import { AppAction, AppState, CountdownWidget, Event, Location, WeatherWidget } from '../types/AppState';
 
 if (typeof Proxy === 'undefined') {
   enableES5(); // Shouldn't be necessary if the app runs just on Chrome.
@@ -44,7 +44,7 @@ export const rootReducer = produce((draft: AppState, action: AppAction) => {
       draft.sidebar.activeView = action.activeView;
       break;
     case 'addNewCountdownEvent':
-      const countdownWidget = draft.widgets.find((widget) => {
+      const countdownWidget: CountdownWidget = draft.widgets.find((widget) => {
         return widget.type === 'countdown';
       });
 
@@ -59,16 +59,46 @@ export const rootReducer = produce((draft: AppState, action: AppAction) => {
       });
 
       if (action.widgetType === 'countdown') {
-        const countdownWidgetEventToRemove = widgetsList?.data.events.findIndex((event) => {
+        const countdownWidgetEventToRemove = widgetsList?.data.events.findIndex((event: Event) => {
           return event.id === action.uuid;
         });
 
-        if (countdownWidgetEventToRemove) {
+        if (countdownWidgetEventToRemove !== -1) {
           widgetsList?.data.events.splice(countdownWidgetEventToRemove, 1);
+        }
+      } else if (action.widgetType === 'weather') {
+        const weatherWidgetEventToRemove = widgetsList?.data.locations.findIndex((location: Location) => {
+          return location.id === action.uuid;
+        });
+
+        if (weatherWidgetEventToRemove !== -1) {
+          widgetsList?.data.locations.splice(weatherWidgetEventToRemove, 1);
         }
       }
 
       break;
+    case 'addNewWeatherLocation': {
+      const weatherWidget: WeatherWidget = draft.widgets.find((widget) => {
+        return widget.type === 'weather';
+      });
+
+      if (weatherWidget) {
+        weatherWidget.data.locations.push(action.location);
+      } else {
+        const newWeatherWidget: WeatherWidget = {
+          type: 'weather',
+          enabled: true,
+          data: {
+            locations: [{
+              ...action.location
+            }]
+          }
+        };
+
+        draft.widgets.push(newWeatherWidget);
+      }
+      break;
+    }
     default:
       break;
   }

@@ -1,9 +1,8 @@
 /* Main Styles */
 
 .mainContainer {
-  background-color: #FFA92B;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
   border-radius: 15px;
-  box-shadow: 0px 10px 13px -7px #BABABA, 5px 5px 15px 5px rgba(0,0,0,0);
   display: flex;
   margin: 0 25px 25px 0;
   padding: 16px;

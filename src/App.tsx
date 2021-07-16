@@ -6,15 +6,49 @@ import Menubar from './modules/menubar/components/Menubar';
 import Sidebar from './modules/sidebar/components/Sidebar';
 import Widget from './common/components/elements/Widget/Widget';
 import CountdownWidget from './modules/countdown/components/CountdownWidget';
+// import WeatherWidget from './modules/weather/components/WeatherWidget';
 import { AppStateProvider } from './common/contexts/AppState';
 import { initialAppState } from './common/state/state';
 import { useAppState, useAppDispatch } from './common/contexts/AppState';
+import { Event, Location } from './common/types/AppState';
 
 // Styles
 import './App.css';
 
 function Home() {
   const { widgets } = useAppState();
+
+  const myWidgets = widgets.map((widget: any) => {
+    if (widget.type === 'countdown') {
+      return widget.data.events.map((countdownEvent: Event) => {
+        return (
+          <Widget 
+            uuid={countdownEvent.id} 
+            widgetType="countdown" 
+            key={countdownEvent.id} 
+            editAction={false}>
+            <CountdownWidget eventName={countdownEvent.name} eventDate={countdownEvent.date} />
+          </Widget>
+        );
+      })
+    } else if (widget.type === 'weather') {
+      return widget.data.locations.map((weatherLocation: Location) => {
+        return (
+          { /* 
+          <Widget
+            uuid={weatherLocation.id}
+            widgetType="weather"
+            key={weatherLocation.id}
+            editAction={false}>
+            <WeatherWidget lat={weatherLocation.lat} lng={weatherLocation.lng}/>
+          </Widget>
+          */ }
+        );
+      })
+    } else {
+      return null;
+    }
+  });
 
   return (
     <>
@@ -28,16 +62,12 @@ function Home() {
         { /* End Side Bar */ }
 
         { /* Main Container */ }
-        <div className="container">
+        <div className="container" style={{backgroundImage: `url(./default.jpg)`, backgroundSize: "cover"}}>
           <main className="main">
-            {widgets[0].data.events.map((widget) => {
-              return (
-                <Widget style={{backgroundImage: `url(${widget.background})`, backgroundSize: "cover"}} uuid={widget.id} widgetType="countdown" key={widget.id} editAction={false}>
-                  <CountdownWidget eventName={widget.name} eventDate={widget.date} />
-                </Widget>
-              );
-            })}
+            { myWidgets }
           </main>
+
+          <span className="imageAttribution">Photo by Lum3n from Pexels</span>
         </div>
         { /* End Main Container */ }
       </div>
