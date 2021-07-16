@@ -2,6 +2,7 @@
   "name": "amelia",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://hugohabel.github.io/amelia-start-page",
   "dependencies": {
     "@material-ui/core": "^4.12.1",
     "@material-ui/icons": "^4.11.2",
@@ -23,7 +24,9 @@
     "build": "INLINE_RUNTIME_CHUNK=false react-scripts build",
     "test-local": "react-scripts test --watchAll --coverage --collectCoverageFrom=!src/common/contexts/AppState.tsx --collectCoverageFrom=!src/common/state/state.ts --collectCoverageFrom=!src/common/types/AppState.ts --collectCoverageFrom=!src/**/tests/__snapshots__/* --collectCoverageFrom=!src/__snapshots__/* --collectCoverageFrom=!src/index.tsx --collectCoverageFrom=!src/reportWebVitals.ts",
     "test": "TZ='America/Panama' react-scripts test --watchAll=false",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "react-scripts build",
+    "deploy": "gh-pages -d build -r https://github.com/hugohabel/amelia-start-page.git"
   },
   "eslintConfig": {
     "extends": [

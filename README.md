@@ -50,7 +50,7 @@
 <!-- About the Project -->
 ## About The Project
 
-[![Amelia Start Page][product-screenshot]](https://example.com)
+[![Amelia Start Page][product-screenshot]](https://hugohabel.github.io/amelia-start-page/)
 
 There are many great start pages available on the Chrome Web Store, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a start page so amazing that it'll be your companion every single day -- I think this is it.
 
