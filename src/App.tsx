@@ -34,15 +34,7 @@ function Home() {
     } else if (widget.type === 'weather') {
       return widget.data.locations.map((weatherLocation: Location) => {
         return (
-          { /* 
-          <Widget
-            uuid={weatherLocation.id}
-            widgetType="weather"
-            key={weatherLocation.id}
-            editAction={false}>
-            <WeatherWidget lat={weatherLocation.lat} lng={weatherLocation.lng}/>
-          </Widget>
-          */ }
+          null
         );
       })
     } else {
