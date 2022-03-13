@@ -5,13 +5,13 @@
 <br />
 <p align="center">
   <a href="https://github.com/hugohabel/amelia-start-page">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="public/images/logo.png" alt="Logo" width="60">
   </a>
 
   <h3 align="center">Amelia Start Page</h3>
 
   <p align="center">
-    An awesome start page with several different widgets. Productivity new tab for Chrome.
+    An awesome start page with several different widgets. Productivity tab for your daily use.
     <br />
     <a href="#">View Demo</a>
     ·
@@ -52,7 +52,7 @@
 
 [![Amelia Start Page][product-screenshot]](https://hugohabel.github.io/amelia-start-page/)
 
-There are many great start pages available on the Chrome Web Store, however, I didn't find one that really suit my needs so I created this enhanced one. I want to create a start page so amazing that it'll be your companion every single day -- I think this is it.
+There are many great start pages available on the Chrome Web Store, however, I didn't find one that really fits my needs. So, as every piece of software, I created a new one to match what I'm looking for. I want to create a start page so amazing that it'll be your companion every single day -- I think this is it.
 
 Here's why:
 * We spend valuable time searching for really simple things in Google (timezones 🕐, weather ⛅, news 📰, etc). This is handy information that should be available just by opening a new tab.
@@ -61,6 +61,10 @@ Here's why:
 
 Of course, no one start page will serve everyone since your needs may be different. So I decided to create widgets for every functionality, and I'll be adding more in the near future. You may also suggest new widgets and/or functionality by opening an issue.
 
+### Why is this app named Amelia?
+
+This app is named after [Amelia Earhart](https://en.wikipedia.org/wiki/Amelia_Earhart) who was an aviation poineer. She was the first female aviator to fly solo across the Atlantic Ocean.
+
 ### Built With
 
 * [CRA](https://create-react-app.dev/)
@@ -68,6 +72,7 @@ Of course, no one start page will serve everyone since your needs may be differe
 * [Jest](https://jestjs.io/)
 * [Formik](https://formik.org/)
 * [TypeScript](https://www.typescriptlang.org/)
+* [Notion](https://www.notion.so/) To manage the project tasks ☺
 
 <!-- Getting Started -->
 ## Getting Started
@@ -105,8 +110,8 @@ See the [open issues](https://github.com/hugohabel/amelia-start-page/issues) for
 ### List of Features for v1.0 🎊🥳🎉
 
 - Widgets
-    - Countdown
-    - Weather
+  - Countdown
+  - Weather
 
 <!-- End Roadmap -->
 
@@ -120,6 +125,8 @@ Contributions are what make the open source community such an amazing place to l
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
+
+Make sure to follow the [coding standards](https://github.com/hugohabel/amelia-start-page/blob/main/CODING_STANDARDS.md) of the project.
 
 <!-- End Contributing -->
 
