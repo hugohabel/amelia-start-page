@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 // Internal Dependencies
-import App from './App';
+import { App } from './App';
 import reportWebVitals from './reportWebVitals';
 
 // Styles

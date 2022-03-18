@@ -1,5 +1,8 @@
 .lightText {
-  color: #FFFFFF;
+  color: #5E5873;
+}
+.remainingTime {
+  color: #7367f0;
 }
 .separatorWord {
   margin: 5px 10px;

@@ -1,15 +1,15 @@
 // External Dependencies
-import CloseOutlinedIcon from '@material-ui/icons/CloseOutlined';
 import EditAttributesOutlinedIcon from '@material-ui/icons/EditAttributesOutlined';
 
 // Internal Dependencies
+import { CloseIcon } from '../../icons/CloseIcon';
 import { useAppDispatch } from '../../../contexts/AppState';
 
 // Styles
 import styles from './Widget.module.css';
 
 // Types
-type Props = {
+interface IWidgetProps {
   children: JSX.Element;
   style?: any;
   uuid: string;
@@ -17,10 +17,10 @@ type Props = {
   editAction: boolean;
 };
 
-function Widget(props: Props) {
+function Widget({children, style, uuid, widgetType, editAction}: IWidgetProps) {
   const dispatch = useAppDispatch();
 
-  // Handler Functions
+  // Handlers
   function handleRemove(uuid: string, widgetType: string) {
     dispatch({
       type: 'removeWidgetItem',
@@ -32,18 +32,18 @@ function Widget(props: Props) {
   return (
     <>
       { /* Main Container */ }
-      <div style={props.style} className={styles.mainContainer}>
+      <div style={style} className={styles.mainContainer}>
         { /* Inherited Content */ }
-        {props.children}
+        {children}
 
         { /* Widget Actions */ }
-        {props.editAction && 
+        {editAction && 
           <div className={styles.actionEdit}>
             <EditAttributesOutlinedIcon fontSize="small" />
           </div>
         }
-        <div className={styles.actionRemove}>
-          <CloseOutlinedIcon data-testid={props.uuid} fontSize="small" onClick={() => { handleRemove(props.uuid, props.widgetType) }}/>
+        <div className={styles.actionRemove} onClick={() => { handleRemove(uuid, widgetType) }}>
+          <CloseIcon data-testid={uuid}/>
         </div>
         { /* End Widget Actions */ }
       </div>
@@ -52,4 +52,4 @@ function Widget(props: Props) {
   );
 }
 
-export default Widget;
+export { Widget };

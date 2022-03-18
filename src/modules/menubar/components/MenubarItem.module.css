@@ -1,0 +1,19 @@
+/* Menu Bar Item */
+.menubarItem {
+  width: calc(100% - 32px);
+  margin: 8px 16px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+}
+.menubarItem:nth-last-child(2) {
+  margin-top: auto;
+}
+.menubarItem:hover {
+  background-color: #F5F5F5;
+  border-radius: 6px;
+}
+/* End Menu Bar Item */

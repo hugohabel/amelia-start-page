@@ -9,10 +9,11 @@
   flex-direction: column;
   height: 100vh;
   flex-grow: 1;
+  background-color: #F7F7F7;
 }
 
 .main {
-  padding: 5rem;
+  padding: 5rem 2rem;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;

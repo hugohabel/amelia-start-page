@@ -1,37 +1,20 @@
 /* Menu Bar */
-
 .menubar {
   display: flex;
-  width: 55px;
+  width: 80px;
   height: 100vh;
   flex-direction: column;
+  background-color: #FFFFFF;
+  align-items: flex-start;
 }
-.menubarItem {
-  width: 100%;
-  padding: 8px 16px;
-  cursor: pointer;
+/* End Menu Bar */
+
+/* Logo */
+.logo {
+  width: 60px;
   display: flex;
-  flex-direction: column;
-  height: 55px;
-  align-items: center;
-}
-.menubarItem:hover > svg {
-  color: #2D3A99;
-}
-.menubarItem:hover > span, .menubarItemActive > span {
-  color: #000000;
-}
-.menubarItemActive > svg {
-  color: #2D3A99;
-}
-.menubarItemIcon {
-  width: 16px;
-  display: flex;
+  flex-direction: row;
   align-self: center;
-}  
-.menuBarItemText {
-  font-size: 12px;
-  display: flex;
-  align-self: center;
-  margin-top: 5px;
+  margin: 20px 0;
 }
+/* End Logo */

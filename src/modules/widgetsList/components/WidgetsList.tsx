@@ -11,24 +11,16 @@ import { ActiveView } from '../../../common/types/AppState';
 // Styles
 import styles from './WidgetsList.module.css';
 
-// Utility functions
-function mapWidgetNameToIcon(name: string) {
-  let icon = null;
-
-  switch (name) {
-    case 'countdown':
-      icon = <HourglassEmptyOutlinedIcon fontSize="small" />;
-      break;
-    case 'weather':
-      icon = <WbSunnyOutlinedIcon fontSize="small" />;
-      break;
-    case 'timezone':
-      icon = <WatchLaterOutlinedIcon fontSize="small" />;
-      break;
-  }
-
-  return icon;
+// Interfaces + Types
+type TWidgetsIcons = {
+  [key: string]: JSX.Element,
 }
+
+const widgetsIcons: TWidgetsIcons = {
+  countdown: <HourglassEmptyOutlinedIcon fontSize="small" />,
+  weather: <WbSunnyOutlinedIcon fontSize="small" />,
+  timezone: <WatchLaterOutlinedIcon fontSize="small" />
+};
 
 function WidgetsList() {
   const dispatch = useAppDispatch();
@@ -50,7 +42,7 @@ function WidgetsList() {
 
         return (
           <div data-testid={widget.name} className={widgetsListItemClasses} key={widget.name} onClick={() => { handleListItemClick(widget.name); }}>
-            {mapWidgetNameToIcon(widget.name)}
+            {widgetsIcons[widget.name]}
             <span>{widget.title}</span>
             {widget.status === 0 && <span className={styles.widgetsListItemUpcomingTitle}>Upcoming!</span>}
           </div>

@@ -25,7 +25,7 @@ function CountdownWidget(props: Props) {
     <div className={styles.lightText}>
       <h3>{props.eventName}</h3>
       <p className={styles.separatorWord}>in</p>
-      <h2>{formattedOutput}</h2>
+      <h2 className={styles.remainingTime}>{formattedOutput}</h2>
     </div>
   );
 }

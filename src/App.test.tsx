@@ -5,7 +5,7 @@ import { render, waitFor } from '@testing-library/react';
 // Internal Dependencies
 import { useAppDispatch } from './common/contexts/AppState';
 import { initialAppState } from './common/state/state';
-import App from './App';
+import { App } from './App';
 
 // Mocked Functions
 jest.mock('./common/contexts/AppState', () => ({

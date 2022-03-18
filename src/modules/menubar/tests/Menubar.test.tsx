@@ -5,7 +5,7 @@ import { fireEvent, render, waitFor } from '@testing-library/react';
 // Internal Dependencies
 import { initialAppState } from '../../../common/state/state';
 import { AppStateProvider, useAppDispatch } from '../../../common/contexts/AppState';
-import Menubar from '../components/Menubar';
+import { Menubar } from '../components/Menubar';
 
 // Mocked Functions
 jest.mock('../../../common/contexts/AppState', () => ({

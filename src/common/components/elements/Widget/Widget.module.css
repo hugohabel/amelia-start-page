@@ -1,28 +1,23 @@
 /* Main Styles */
-
 .mainContainer {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
-  border-radius: 15px;
+  background-color: #FFFFFF;
+  border-radius: .428rem;
   display: flex;
   margin: 0 25px 25px 0;
   padding: 16px;
   position: relative;
   width: 343px;
+  color: #5E5873;
 }
-
 /* End Main Styles */
 
 /* Actions */
-
 .actionRemove {
-  bottom: 3px;
+  top: 9px;
   cursor: pointer;
   position: absolute;
   right: 12px;
   width: 12px;
-}
-.actionRemove:hover {
-  color: #2D3A99;
 }
 .actionEdit {
   top: 3px;
@@ -31,8 +26,4 @@
   right: 12px;
   width: 12px;
 }
-.actionEdit:hover {
-  color: #2D3A99;
-}
-
 /* End Actions */

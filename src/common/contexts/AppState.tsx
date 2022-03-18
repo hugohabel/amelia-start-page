@@ -15,7 +15,7 @@ type AppStateProviderProps = {
   initialStateOverride?: AppState;
 };
 
-// Util Functions
+// Utility Functions
 
 /**
  * Retrieves state from local storage or initializes with default state.

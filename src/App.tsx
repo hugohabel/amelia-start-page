@@ -2,11 +2,12 @@
 import { useEffect } from 'react';
 
 // Internal Dependencies
-import Menubar from './modules/menubar/components/Menubar';
+import { Menubar } from './modules/menubar/components/Menubar';
+import { Widget } from './common/components/elements/Widget/Widget';
+
 import Sidebar from './modules/sidebar/components/Sidebar';
-import Widget from './common/components/elements/Widget/Widget';
 import CountdownWidget from './modules/countdown/components/CountdownWidget';
-// import WeatherWidget from './modules/weather/components/WeatherWidget';
+
 import { AppStateProvider } from './common/contexts/AppState';
 import { initialAppState } from './common/state/state';
 import { useAppState, useAppDispatch } from './common/contexts/AppState';
@@ -15,6 +16,9 @@ import { Event, Location } from './common/types/AppState';
 // Styles
 import './App.css';
 
+/**
+ * 
+ */
 function Home() {
   const { widgets } = useAppState();
 
@@ -45,21 +49,21 @@ function Home() {
   return (
     <>
       <div className="mainContainer">
-        { /* Menu Bar */ }
+        { /* Menu Bar - Where the icons live */ }
         <Menubar />
         { /* End Menu Bar */ }
 
-        { /* Side Bar */ }
+        { /* Side Bar - Where you can configure the widgets */ }
         <Sidebar />
         { /* End Side Bar */ }
 
         { /* Main Container */ }
-        <div className="container" style={{backgroundImage: `url(./default.jpg)`, backgroundSize: "cover"}}>
+        <div className="container">
           <main className="main">
             { myWidgets }
           </main>
 
-          <span className="imageAttribution">Photo by Lum3n from Pexels</span>
+          <span className="imageAttribution">Hand-crafted & Made with </span>
         </div>
         { /* End Main Container */ }
       </div>
@@ -67,11 +71,16 @@ function Home() {
   );
 }
 
+/**
+ * 
+ */
 function App() {
   const { sidebar } = useAppState();
   const dispatch = useAppDispatch();
 
+  // Life-cycle Events
   useEffect(function () {
+    // Close the sidebar, in case it's open.
     if (sidebar.isOpen) {
       dispatch({
         type: 'toggleSidebar'
@@ -80,12 +89,10 @@ function App() {
   }, [dispatch, sidebar.isOpen]);
 
   return (
-    <>
-      <AppStateProvider initialStateOverride={initialAppState}>
-        <Home />
-      </AppStateProvider>
-    </>
+    <AppStateProvider initialStateOverride={initialAppState}>
+      <Home />
+    </AppStateProvider>
   )
 }
 
-export default App;
+export { App };

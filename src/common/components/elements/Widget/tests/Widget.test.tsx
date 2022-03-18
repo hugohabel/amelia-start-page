@@ -3,7 +3,7 @@ import { fireEvent, getByTestId, render, waitFor } from '@testing-library/react'
 
 // Internal Dependencies
 import { AppStateProvider, useAppDispatch } from '../../../../../common/contexts/AppState';
-import Widget from '../Widget';
+import { Widget } from '../Widget';
 
 // Mocked Functions
 jest.mock('../../../../../common/contexts/AppState', () => ({
