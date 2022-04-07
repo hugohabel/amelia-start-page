@@ -104,9 +104,9 @@ To get a local copy up and running follow these simple example steps.
 <!-- End Getting Started -->
 
 <!-- Widgets Documentation -->
-## Widgets Documentation
+## Widgets Docs
 
-* [Countdown Widget]()
+* [Countdown Widget](https://github.com/hugohabel/amelia-start-page/blob/main/src/modules/countdown/docs/COUNTDOWN_README.md)
 
 <!-- End Widgets Documentation -->
 
