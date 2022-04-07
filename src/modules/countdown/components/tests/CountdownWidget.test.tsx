@@ -3,7 +3,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 
 // Internal Dependencies
-import CountdownWidget from '../CountdownWidget';
+import { CountdownWidget } from '../CountdownWidget';
 
 describe('Countdown Widget', () => {
 

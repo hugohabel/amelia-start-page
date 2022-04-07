@@ -121,3 +121,8 @@ The following coding standards are for use only on this project, and are complet
     `// Styles`
 * Use `index.ts` to export the main functionality/components from each file, in order to avoid repeating names on the imports.
 * Always use named exports over default exports.
+
+### Storybook
+
+* Add stories for the blocks of functionality that require it. Most of the times, it will be for everything that's under the `modules` directory.
+* The name of the stories should be the same as the component, plus the `.stories.tsx` suffix.

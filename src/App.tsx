@@ -6,7 +6,7 @@ import { Menubar } from './modules/menubar/components/Menubar';
 import { Widget } from './common/components/elements/Widget/Widget';
 
 import Sidebar from './modules/sidebar/components/Sidebar';
-import CountdownWidget from './modules/countdown/components/CountdownWidget';
+import { CountdownWidget } from './modules/countdown/components/CountdownWidget';
 
 import { AppStateProvider } from './common/contexts/AppState';
 import { initialAppState } from './common/state/state';
@@ -17,7 +17,7 @@ import { Event, Location } from './common/types/AppState';
 import './App.css';
 
 /**
- * 
+ * Home Page
  */
 function Home() {
   const { widgets } = useAppState();

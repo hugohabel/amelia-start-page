@@ -39,6 +39,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
+    <li><a href="#widgets-docs">Widgets Documentation</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -101,6 +102,13 @@ To get a local copy up and running follow these simple example steps.
    yarn start
    ```
 <!-- End Getting Started -->
+
+<!-- Widgets Documentation -->
+## Widgets Documentation
+
+* [Countdown Widget]()
+
+<!-- End Widgets Documentation -->
 
 <!-- Roadmap -->
 ## Roadmap

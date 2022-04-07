@@ -1,5 +1,8 @@
-.lightText {
+.countdownWidget {
   color: #5E5873;
+}
+.countdownWidget > h3 {
+  word-break: break-all;
 }
 .remainingTime {
   color: #7367f0;
