@@ -8,16 +8,16 @@ import styles from './CountdownWidget.module.css';
 interface ICountdownWidgetProps {
   eventName: string;
   eventDate: string;
-};
+}
 
-function CountdownWidget({eventDate, eventName}: ICountdownWidgetProps) {
+function CountdownWidget({ eventDate, eventName }: ICountdownWidgetProps) {
   let formattedOutput = '';
 
   try {
     const timeDiff = getDiffUntilDate(eventDate);
     formattedOutput = formatTimeDiff(timeDiff, 'days+hours');
   } catch (err) {
-    //logError(err.message);
+    // logError(err.message);
   }
 
   return (

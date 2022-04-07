@@ -13,11 +13,11 @@ export interface Sidebar {
 
 // Countdown Widget
 export interface CountdownWidget {
-  type: "countdown";
+  type: 'countdown';
   enabled: boolean;
   data: {
-    events: Event[]
-  }
+    events: Event[];
+  };
 }
 
 export interface Event {
@@ -30,11 +30,11 @@ export interface Event {
 
 // Weather Widget
 export interface WeatherWidget {
-  type: "weather";
+  type: 'weather';
   enabled: boolean;
   data: {
     locations: Location[];
-  }
+  };
 }
 
 export interface Location {
@@ -51,7 +51,7 @@ export type ActiveView = 'add_countdown' | 'add_weather' | null;
 // App State Actions
 type Action =
   | { type: 'addNewWidget'; widget: CountdownWidget | WeatherWidget }
-  | { type: 'toggleSidebar'; }
+  | { type: 'toggleSidebar' }
   | { type: 'setActiveMenu'; activeMenu: ActiveMenu }
   | { type: 'setActiveView'; activeView: ActiveView }
   | { type: 'addNewCountdownEvent'; event: Event }

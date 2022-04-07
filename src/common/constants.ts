@@ -11,16 +11,16 @@ export const DAYS_HOURS_DIFF_TEMPLATE = '%daysToken% days %hoursToken% hours';
 export const MENUBAR_OPTIONS = [
   {
     title: 'Add',
-    key: 'add'
+    key: 'add',
   },
   {
     title: 'About',
-    key: 'about'
+    key: 'about',
   },
   {
     title: 'Config',
-    key: 'config'
-  }
+    key: 'config',
+  },
 ];
 
 // Error Messages
@@ -41,18 +41,18 @@ export const WIDGETS_LIST = [
   {
     name: 'timezone',
     title: 'Timezone Converter',
-    status: -1
-  }
+    status: -1,
+  },
 ];
 
 // Menu Bar and Widgets View Handler
 
 type Option = {
-  [key: string]: number
+  [key: string]: number;
 };
 
 export const MENUBAR: Option = {
-  ADD: 1
+  ADD: 1,
 };
 export const ACTIONS: Option = {
   ADD_COUNTDOWN: 10,

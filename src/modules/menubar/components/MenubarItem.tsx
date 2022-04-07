@@ -12,11 +12,12 @@ import styles from './MenubarItem.module.css';
 interface IMenubarItemProps {
   name: string;
   configKey: string;
-};
+}
 
 type TIcons = {
-  [key: string]: JSX.Element,
-}
+  // eslint-disable-next-line no-undef
+  [key: string]: JSX.Element;
+};
 
 // Constants
 const ICONS: TIcons = {
@@ -25,22 +26,26 @@ const ICONS: TIcons = {
   config: <CogIcon />,
 };
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function MenubarItem({ name, configKey }: IMenubarItemProps) {
   const dispatch = useAppDispatch();
   const { sidebar } = useAppState();
   const icon = ICONS[configKey];
 
-  const classesMenubar = sidebar.isOpen && configKey === sidebar.activeMenu ? `${styles.menubarItem} ${styles.menubarItemActive}` : `${styles.menubarItem}`;
+  const classesMenubar =
+    sidebar.isOpen && configKey === sidebar.activeMenu
+      ? `${styles.menubarItem} ${styles.menubarItemActive}`
+      : `${styles.menubarItem}`;
 
   // Handlers
   function handleIconClick() {
     /* istanbul ignore else */
     if (!sidebar.isOpen) {
       dispatch({
-        type: 'toggleSidebar'
+        type: 'toggleSidebar',
       });
     }
-    dispatch({ type: 'setActiveMenu', activeMenu: configKey as ActiveMenu});
+    dispatch({ type: 'setActiveMenu', activeMenu: configKey as ActiveMenu });
   }
 
   return (

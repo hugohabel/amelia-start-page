@@ -15,15 +15,12 @@ let mockAppDispatch: ReturnType<typeof useAppDispatch>;
 
 describe('Countdown Form Add View', () => {
   it('matches snapshot', async () => {
-    const component = render(
-      <CountdownFormAddView />
-    );
+    const component = render(<CountdownFormAddView />);
 
     expect(component.asFragment()).toMatchSnapshot();
   });
 
   describe('Countdown Form - Handlers', () => {
-
     beforeEach(() => {
       mockAppDispatch = jest.fn();
       (useAppDispatch as jest.Mock).mockReturnValue(mockAppDispatch);
@@ -46,7 +43,7 @@ describe('Countdown Form Add View', () => {
       await waitFor(() => {
         expect(mockAppDispatch).toHaveBeenCalledWith({
           activeView: null,
-          type: 'setActiveView'
+          type: 'setActiveView',
         });
       });
     });

@@ -13,13 +13,14 @@ import styles from './WidgetsList.module.css';
 
 // Interfaces + Types
 type TWidgetsIcons = {
-  [key: string]: JSX.Element,
-}
+  // eslint-disable-next-line no-undef
+  [key: string]: JSX.Element;
+};
 
 const widgetsIcons: TWidgetsIcons = {
   countdown: <HourglassEmptyOutlinedIcon fontSize="small" />,
   weather: <WbSunnyOutlinedIcon fontSize="small" />,
-  timezone: <WatchLaterOutlinedIcon fontSize="small" />
+  timezone: <WatchLaterOutlinedIcon fontSize="small" />,
 };
 
 function WidgetsList() {
@@ -38,13 +39,27 @@ function WidgetsList() {
       <h2 className={styles.widgetsListTitle}>New widget</h2>
       <p className={styles.widgetsListSubtitle}>Select a widget from the list below</p>
       {WIDGETS_LIST.map((widget) => {
-        const widgetsListItemClasses = widget.status === 1 ? `${styles.widgetsListItem}` : widget.status === -1 ? `${styles.widgetsListItemHidden}` : `${styles.widgetsListItem} ${styles.widgetsListItemUpcoming}`;
+        const widgetsListItemClasses =
+          // eslint-disable-next-line no-nested-ternary
+          widget.status === 1
+            ? `${styles.widgetsListItem}`
+            : widget.status === -1
+            ? `${styles.widgetsListItemHidden}`
+            : `${styles.widgetsListItem} ${styles.widgetsListItemUpcoming}`;
 
         return (
-          <div data-testid={widget.name} className={widgetsListItemClasses} key={widget.name} onClick={() => { handleListItemClick(widget.name); }}>
+          <div
+            data-testid={widget.name}
+            className={widgetsListItemClasses}
+            key={widget.name}
+            onClick={() => {
+              handleListItemClick(widget.name);
+            }}>
             {widgetsIcons[widget.name]}
             <span>{widget.title}</span>
-            {widget.status === 0 && <span className={styles.widgetsListItemUpcomingTitle}>Upcoming!</span>}
+            {widget.status === 0 && (
+              <span className={styles.widgetsListItemUpcomingTitle}>Upcoming!</span>
+            )}
           </div>
         );
       })}

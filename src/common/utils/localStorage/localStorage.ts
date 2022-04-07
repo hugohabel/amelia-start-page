@@ -1,8 +1,5 @@
 // Internal Dependencies
-import {
-  LOCAL_STORAGE_VERIFICATION_KEY,
-  LOCAL_STORAGE_VERIFICATION_VALUE
-} from '../../constants';
+import { LOCAL_STORAGE_VERIFICATION_KEY, LOCAL_STORAGE_VERIFICATION_VALUE } from '../../constants';
 
 /**
  * Validates if window.localStorage is available.
@@ -15,7 +12,10 @@ function isLocalStorageAvailable(): boolean {
     /* istanbul ignore next */
     if (window.localStorage) {
       try {
-        window.localStorage.setItem(LOCAL_STORAGE_VERIFICATION_KEY, LOCAL_STORAGE_VERIFICATION_VALUE);
+        window.localStorage.setItem(
+          LOCAL_STORAGE_VERIFICATION_KEY,
+          LOCAL_STORAGE_VERIFICATION_VALUE
+        );
         const result = window.localStorage.getItem(LOCAL_STORAGE_VERIFICATION_KEY);
 
         if (result === LOCAL_STORAGE_VERIFICATION_VALUE) {
@@ -39,7 +39,9 @@ export class SafeLocalStorage implements Storage {
   private static instance: SafeLocalStorage;
 
   isLocalStorageAvailable: boolean;
+
   internalStorage: { [key: string]: string };
+
   length: number;
 
   private constructor() {

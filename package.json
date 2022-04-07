@@ -11,6 +11,7 @@
     "formik": "^2.2.9",
     "gh-pages": "^3.2.3",
     "immer": "^9.0.5",
+    "lodash": "^4.17.21",
     "normalize.css": "^8.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -21,16 +22,19 @@
     "yup": "^0.32.9"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "build-storybook": "build-storybook -s public",
     "build": "INLINE_RUNTIME_CHUNK=false react-scripts build",
-    "test-local": "react-scripts test --watchAll --coverage --collectCoverageFrom=!src/common/contexts/AppState.tsx --collectCoverageFrom=!src/common/state/state.ts --collectCoverageFrom=!src/common/types/AppState.ts --collectCoverageFrom=!src/**/tests/__snapshots__/* --collectCoverageFrom=!src/__snapshots__/* --collectCoverageFrom=!src/index.tsx --collectCoverageFrom=!src/reportWebVitals.ts",
-    "test": "TZ='America/Panama' react-scripts test --watchAll=false",
-    "eject": "react-scripts eject",
-    "predeploy": "react-scripts build",
     "deploy": "gh-pages -d build -r https://github.com/hugohabel/amelia-start-page.git",
+    "eject": "react-scripts eject",
+    "format": "prettier \"**/*.{js,json,md,ts,tsx,html}\" --write",
+    "lint": "eslint --ext js,ts,tsx,html . && tsc --pretty --noEmit",
+    "predeploy": "react-scripts build",
+    "start": "react-scripts start",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "test-local": "react-scripts test --watchAll --coverage --collectCoverageFrom=!src/common/contexts/AppState.tsx --collectCoverageFrom=!src/common/state/state.ts --collectCoverageFrom=!src/common/types/AppState.ts --collectCoverageFrom=!src/**/tests/__snapshots__/* --collectCoverageFrom=!src/__snapshots__/* --collectCoverageFrom=!src/index.tsx --collectCoverageFrom=!src/reportWebVitals.ts",
+    "test": "TZ='America/Panama' react-scripts test --watchAll=false"
   },
+  "pre-commit": [ "format", "lint" ],
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -79,6 +83,17 @@
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/uuid": "^8.3.1",
+    "eslint": "^8.12.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^2.7.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest": "^26.1.3",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.4.0",
+    "pre-commit": "^1.2.2",
+    "prettier": "^2.6.2",
     "webpack": "^5.70.0"
   }
 }

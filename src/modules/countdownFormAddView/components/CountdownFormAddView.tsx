@@ -3,7 +3,7 @@ import ArrowBackOutlinedIcon from '@material-ui/icons/ArrowBackOutlined';
 
 // Internal Dependencies
 import { useAppDispatch } from '../../../common/contexts/AppState';
-import CountdownForm from "../../../modules/countdownForm/components/CountdownForm";
+import CountdownForm from '../../countdownForm/components/CountdownForm';
 
 // Styles
 import styles from './CountdownFormAddView.module.css';
@@ -15,27 +15,27 @@ function CountdownFormAddView() {
   function handleGoBackClick() {
     dispatch({
       type: 'setActiveView',
-      activeView: null
+      activeView: null,
     });
   }
 
   return (
     <>
-      { /* Go Back */ }
+      {/* Go Back */}
       <div data-testid="go-back" className={styles.backContainer} onClick={handleGoBackClick}>
         <ArrowBackOutlinedIcon fontSize="small" />
         <span>Go Back</span>
       </div>
-      { /* End Go Back */ }
+      {/* End Go Back */}
 
-      { /* Title */ }
+      {/* Title */}
       <h2 className={styles.title}>New countdown</h2>
       <p className={styles.subtitle}>Add the details for your countdown widget</p>
-      { /* End Title */ }
+      {/* End Title */}
 
-      { /* Countdown Form */ }
+      {/* Countdown Form */}
       <CountdownForm />
-      { /* End Countdown Form */ }
+      {/* End Countdown Form */}
     </>
   );
 }

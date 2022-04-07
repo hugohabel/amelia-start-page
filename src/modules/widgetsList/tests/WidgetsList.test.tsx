@@ -15,15 +15,12 @@ let mockAppDispatch: ReturnType<typeof useAppDispatch>;
 
 describe('Widgets List', () => {
   it('matches snapshot', async () => {
-    const component = render(
-      <WidgetsList />
-    );
+    const component = render(<WidgetsList />);
 
     expect(component.asFragment()).toMatchSnapshot();
   });
 
   describe('Widgets List - Handlers', () => {
-
     beforeEach(() => {
       mockAppDispatch = jest.fn();
       (useAppDispatch as jest.Mock).mockReturnValue(mockAppDispatch);
@@ -46,7 +43,7 @@ describe('Widgets List', () => {
       await waitFor(() => {
         expect(mockAppDispatch).toHaveBeenCalledWith({
           type: 'setActiveView',
-          activeView: 'add_countdown'
+          activeView: 'add_countdown',
         });
       });
     });

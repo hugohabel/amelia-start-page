@@ -16,7 +16,7 @@ let mockAppDispatch: ReturnType<typeof useAppDispatch>;
 
 // Mocked Values
 const DEFAULTSTATE = {
-  ...initialAppState
+  ...initialAppState,
 };
 
 describe('Sidebar', () => {
@@ -71,7 +71,6 @@ describe('Sidebar', () => {
   });
 
   describe('Sidebar - Handlers', () => {
-
     beforeEach(() => {
       mockAppDispatch = jest.fn();
       (useAppDispatch as jest.Mock).mockReturnValue(mockAppDispatch);

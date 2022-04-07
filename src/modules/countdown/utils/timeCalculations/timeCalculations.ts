@@ -9,7 +9,7 @@ type TimeDiff = {
   days: string;
   hours: string;
   minutes: string;
-}
+};
 
 type Format = 'days' | 'days+hours';
 
@@ -20,8 +20,9 @@ type Format = 'days' | 'days+hours';
  *
  * @returns TimeDiff  Time difference.
  */
-export const getDiffUntilDate = function(targetDate: string): TimeDiff {
+export const getDiffUntilDate = function getDiffUntilDate(targetDate: string): TimeDiff {
   if (!dayjs(targetDate).isValid()) {
+    // eslint-disable-next-line no-param-reassign
     targetDate = new Date().toISOString();
   }
 
@@ -37,11 +38,11 @@ export const getDiffUntilDate = function(targetDate: string): TimeDiff {
   const [minutes] = (parseFloat(`0.${hoursRest}`) * 60).toString().split('.');
 
   return {
-    days: days, 
-    hours: hours,
-    minutes: minutes
+    days,
+    hours,
+    minutes,
   };
-}
+};
 
 /**
  * Formats a time difference, based on a template.
@@ -51,11 +52,16 @@ export const getDiffUntilDate = function(targetDate: string): TimeDiff {
  *
  * @returns string  Strings with the values interpolated.
  */
-export const formatTimeDiff = function(timeDiff: TimeDiff, format: Format): string {
+export const formatTimeDiff = function formatTimeDiff(timeDiff: TimeDiff, format: Format): string {
   switch (format) {
     case 'days':
       return DAYS_DIFF_TEMPLATE.replace('%daysToken%', timeDiff.days);
     case 'days+hours':
-      return DAYS_HOURS_DIFF_TEMPLATE.replace('%daysToken%', timeDiff.days).replace('%hoursToken%', timeDiff.hours);
+      return DAYS_HOURS_DIFF_TEMPLATE.replace('%daysToken%', timeDiff.days).replace(
+        '%hoursToken%',
+        timeDiff.hours
+      );
+    default:
+      return '';
   }
-}
+};

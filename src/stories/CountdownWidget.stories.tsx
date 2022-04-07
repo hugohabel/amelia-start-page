@@ -14,17 +14,17 @@ export default {
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     eventName: { control: 'text' },
-    eventDate: { control: 'date' }
+    eventDate: { control: 'date' },
   },
   parameters: {
     backgrounds: {
       default: 'amelia',
       values: [
         {
-          name: 'amelia', 
-          value: '#F7F7F7'
-        }
-      ]
+          name: 'amelia',
+          value: '#F7F7F7',
+        },
+      ],
     },
     docs: {
       page: null,
@@ -32,11 +32,16 @@ export default {
   },
 } as ComponentMeta<typeof CountdownWidget>;
 
-const Template: ComponentStory<typeof CountdownWidget> = (args) => <Widget uuid="123" widgetType="countdown" key="123" editAction={false}><CountdownWidget {...args} /></Widget>;
+// eslint-disable-next-line react/function-component-definition
+const Template: ComponentStory<typeof CountdownWidget> = (args) => (
+  <Widget uuid="123" widgetType="countdown" key="123" editAction={false}>
+    <CountdownWidget {...args} />
+  </Widget>
+);
 
 export const Basic = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Basic.args = {
   eventName: 'Christmas',
-  eventDate: '2022-12-25T05:00:00.000Z'
+  eventDate: '2022-12-25T05:00:00.000Z',
 };

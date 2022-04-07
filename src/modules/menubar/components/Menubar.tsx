@@ -10,16 +10,12 @@ import styles from './Menubar.module.css';
  */
 function Menubar() {
   return (
-    <>
-      <div className={styles.menubar}>
-        <img src={process.env.PUBLIC_URL + "/images/logo.png"} alt="Logo" className={styles.logo} />
-        {MENUBAR_OPTIONS.map((option) => {
-          return (
-            <MenubarItem name={option.title} configKey={option.key} key={option.key}/>
-          );
-        })}
-      </div>
-    </>
+    <div className={styles.menubar}>
+      <img src={`${process.env.PUBLIC_URL}/images/logo.png`} alt="Logo" className={styles.logo} />
+      {MENUBAR_OPTIONS.map((option) => {
+        return <MenubarItem name={option.title} configKey={option.key} key={option.key} />;
+      })}
+    </div>
   );
 }
 

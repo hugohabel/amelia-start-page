@@ -16,14 +16,12 @@ let mockAppDispatch: ReturnType<typeof useAppDispatch>;
 
 // Mockes Values
 const DEFAULTSTATE = {
-  ...initialAppState
+  ...initialAppState,
 };
 
 describe('Menubar', () => {
   it('matches snapshot', async () => {
-    const component = render(
-      <Menubar />
-    );
+    const component = render(<Menubar />);
 
     expect(component.asFragment()).toMatchSnapshot();
   });
@@ -45,7 +43,6 @@ describe('Menubar', () => {
   });
 
   describe('Menubar - Handlers', () => {
-
     beforeEach(() => {
       mockAppDispatch = jest.fn();
       (useAppDispatch as jest.Mock).mockReturnValue(mockAppDispatch);

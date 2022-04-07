@@ -19,7 +19,7 @@ type AppStateProviderProps = {
 
 /**
  * Retrieves state from local storage or initializes with default state.
- * 
+ *
  * @param defaultState AppState   Default app state.
  * @returns AppState  State (can be an existing one, or a default one)
  */
@@ -43,7 +43,7 @@ function persistState(state: AppState) {
 const debouncePersistState = debounce(persistState, 500, {
   leading: false,
   trailing: true,
-  maxWait: 1000
+  maxWait: 1000,
 });
 
 function reducerWrapper(state: AppState, action: AppAction) {
@@ -54,22 +54,20 @@ function reducerWrapper(state: AppState, action: AppAction) {
 
 // Create Contexts
 const AppStateContext = createContext<AppState>(initialAppState);
-const AppDispatchContext = createContext<AppDispatch>(() => 
+const AppDispatchContext = createContext<AppDispatch>(() =>
+  // eslint-disable-next-line no-console
   console.warn('Calling default dispatch is a no-op!')
 );
 
 /**
  * App State Provider
- * 
+ *
  * @param param AppStateProviderProps Props to initialize the app state provider.
  * @returns JSX App Dispatch and App State Contexts.
  */
-export const AppStateProvider = ({
-  children,
-  initialStateOverride
-}: AppStateProviderProps) => {
+export function AppStateProvider({ children, initialStateOverride }: AppStateProviderProps) {
   const hydratedInitialAppState = {
-    ...initialAppState
+    ...initialAppState,
   };
 
   const [state, dispatch] = useReducer(
@@ -82,11 +80,11 @@ export const AppStateProvider = ({
     <AppDispatchContext.Provider value={dispatch}>
       <AppStateContext.Provider value={state}>{children}</AppStateContext.Provider>
     </AppDispatchContext.Provider>
-  )
-};
+  );
+}
 
 AppStateProvider.defaultProps = {
-  initialStateOverride: undefined
+  initialStateOverride: undefined,
 };
 
 export const useAppState = () => useContext(AppStateContext);

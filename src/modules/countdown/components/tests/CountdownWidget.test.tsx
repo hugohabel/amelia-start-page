@@ -6,7 +6,6 @@ import { render } from '@testing-library/react';
 import { CountdownWidget } from '../CountdownWidget';
 
 describe('Countdown Widget', () => {
-
   // Setup and Teardown
 
   beforeAll(() => {

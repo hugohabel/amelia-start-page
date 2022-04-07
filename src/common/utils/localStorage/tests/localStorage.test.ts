@@ -6,7 +6,6 @@ let savedLocalStorage: Storage;
 
 // Test Suite
 describe('Local Storage - In Memory', () => {
-
   // Setup and Teardown
   beforeAll(() => {
     savedLocalStorage = window.localStorage;

@@ -1,31 +1,44 @@
+/* eslint-disable no-case-declarations */
+/* eslint-disable no-param-reassign */
 // External Dependencies
 import produce, { enableES5 } from 'immer';
 
 // Internal Dependencies
-import { AppAction, AppState, CountdownWidget, Event, Location, WeatherWidget } from '../types/AppState';
+import {
+  AppAction,
+  AppState,
+  CountdownWidget,
+  Event,
+  Location,
+  WeatherWidget,
+} from '../types/AppState';
 
 if (typeof Proxy === 'undefined') {
   enableES5(); // Shouldn't be necessary if the app runs just on Chrome.
 }
 
 export const initialAppState: AppState = {
-  widgets: [{
-    type: 'countdown',
-    enabled: true,
-    data: {
-      events: [{
-        id: 'ba4d-13dbf795d755',
-        name: 'Christmas',
-        date: '2021-12-25T05:00:00.000Z',
-        background: 'christmas-bg.jpg',
-      }]
-    }
-  }],
+  widgets: [
+    {
+      type: 'countdown',
+      enabled: true,
+      data: {
+        events: [
+          {
+            id: 'ba4d-13dbf795d755',
+            name: 'Christmas',
+            date: '2021-12-25T05:00:00.000Z',
+            background: 'christmas-bg.jpg',
+          },
+        ],
+      },
+    },
+  ],
   sidebar: {
     isOpen: false,
     activeMenu: null,
-    activeView: null
-  }
+    activeView: null,
+  },
 };
 
 // @TO-DO - Extract the logic here to an external utils function and add tests to it.
@@ -67,9 +80,11 @@ export const rootReducer = produce((draft: AppState, action: AppAction) => {
           widgetsList?.data.events.splice(countdownWidgetEventToRemove, 1);
         }
       } else if (action.widgetType === 'weather') {
-        const weatherWidgetEventToRemove = widgetsList?.data.locations.findIndex((location: Location) => {
-          return location.id === action.uuid;
-        });
+        const weatherWidgetEventToRemove = widgetsList?.data.locations.findIndex(
+          (location: Location) => {
+            return location.id === action.uuid;
+          }
+        );
 
         if (weatherWidgetEventToRemove !== -1) {
           widgetsList?.data.locations.splice(weatherWidgetEventToRemove, 1);
@@ -89,10 +104,12 @@ export const rootReducer = produce((draft: AppState, action: AppAction) => {
           type: 'weather',
           enabled: true,
           data: {
-            locations: [{
-              ...action.location
-            }]
-          }
+            locations: [
+              {
+                ...action.location,
+              },
+            ],
+          },
         };
 
         draft.widgets.push(newWeatherWidget);

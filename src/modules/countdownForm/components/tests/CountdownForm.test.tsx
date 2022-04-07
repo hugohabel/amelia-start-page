@@ -19,15 +19,12 @@ const EVENTDATEVALUE = '2021-12-12';
 
 describe('Countdown Form', () => {
   it('matches snapshot', async () => {
-    const component = render(
-      <CountdownForm />
-    );
+    const component = render(<CountdownForm />);
 
     expect(component.asFragment()).toMatchSnapshot();
   });
 
   describe('Countdown Form - Handlers', () => {
-
     beforeEach(() => {
       mockAppDispatch = jest.fn();
       (useAppDispatch as jest.Mock).mockReturnValue(mockAppDispatch);

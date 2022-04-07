@@ -3,12 +3,10 @@
   "name": "Amelia Start Page",
   "version": "0.1",
   "description": "Start page with several different widgets available, i.e.: countdown. Productivity new tab for Chrome.",
-  "chrome_url_overrides" : {
+  "chrome_url_overrides": {
     "newtab": "index.html"
   },
-  "permissions": [
-    "storage"
-  ],
+  "permissions": ["storage"],
   "icons": {
     "16": "logo192.png",
     "48": "logo192.png",

@@ -10,44 +10,50 @@ import styles from './Widget.module.css';
 
 // Types
 interface IWidgetProps {
+  // eslint-disable-next-line no-undef
   children: JSX.Element;
   style?: any;
   uuid: string;
   widgetType: string;
   editAction: boolean;
-};
+}
 
-function Widget({children, style, uuid, widgetType, editAction}: IWidgetProps) {
+function Widget({ children, style, uuid, widgetType, editAction }: IWidgetProps) {
   const dispatch = useAppDispatch();
 
   // Handlers
+  // eslint-disable-next-line no-shadow
   function handleRemove(uuid: string, widgetType: string) {
     dispatch({
       type: 'removeWidgetItem',
-      uuid: uuid,
-      widgetType: widgetType
+      uuid,
+      widgetType,
     });
   }
 
   return (
     <>
-      { /* Main Container */ }
+      {/* Main Container */}
       <div style={style} className={styles.mainContainer}>
-        { /* Inherited Content */ }
+        {/* Inherited Content */}
         {children}
 
-        { /* Widget Actions */ }
-        {editAction && 
+        {/* Widget Actions */}
+        {editAction && (
           <div className={styles.actionEdit}>
             <EditAttributesOutlinedIcon fontSize="small" />
           </div>
-        }
-        <div className={styles.actionRemove} onClick={() => { handleRemove(uuid, widgetType) }}>
-          <CloseIcon data-testid={uuid}/>
+        )}
+        <div
+          className={styles.actionRemove}
+          onClick={() => {
+            handleRemove(uuid, widgetType);
+          }}>
+          <CloseIcon data-testid={uuid} />
         </div>
-        { /* End Widget Actions */ }
+        {/* End Widget Actions */}
       </div>
-      { /* End Main Container */ }
+      {/* End Main Container */}
     </>
   );
 }

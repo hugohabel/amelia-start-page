@@ -2,7 +2,7 @@
 import { fireEvent, getByTestId, render, waitFor } from '@testing-library/react';
 
 // Internal Dependencies
-import { AppStateProvider, useAppDispatch } from '../../../../../common/contexts/AppState';
+import { AppStateProvider, useAppDispatch } from '../../../../contexts/AppState';
 import { Widget } from '../Widget';
 
 // Mocked Functions
@@ -18,7 +18,11 @@ const UUID = 'a2c82ff0-a886-4016-a9ac-e3b6d8e49676';
 describe('Widget', () => {
   it('matches snapshot', async () => {
     const component = render(
-      <Widget style={{backgroundColor: "#FFFFFF"}} uuid={UUID} widgetType="test" editAction={false}>
+      <Widget
+        style={{ backgroundColor: '#FFFFFF' }}
+        uuid={UUID}
+        widgetType="test"
+        editAction={false}>
         <h1>Widget Container - Children</h1>
       </Widget>
     );
@@ -27,7 +31,6 @@ describe('Widget', () => {
   });
 
   describe('Widget - Handlers', () => {
-
     beforeEach(() => {
       mockAppDispatch = jest.fn();
       (useAppDispatch as jest.Mock).mockReturnValue(mockAppDispatch);
@@ -36,7 +39,11 @@ describe('Widget', () => {
     it('triggers remove handler when clicking on the remove icon', async () => {
       const component = render(
         <AppStateProvider>
-          <Widget style={{backgroundColor: "#FFFFFF"}} uuid={UUID} widgetType="test" editAction={false}>
+          <Widget
+            style={{ backgroundColor: '#FFFFFF' }}
+            uuid={UUID}
+            widgetType="test"
+            editAction={false}>
             <h1>Widget Container - Children</h1>
           </Widget>
         </AppStateProvider>
@@ -49,9 +56,9 @@ describe('Widget', () => {
 
       await waitFor(() => {
         expect(mockAppDispatch).toHaveBeenCalledWith({
-          type: 'removeWidgetItem', 
+          type: 'removeWidgetItem',
           uuid: 'a2c82ff0-a886-4016-a9ac-e3b6d8e49676',
-          widgetType: 'test'
+          widgetType: 'test',
         });
       });
     });
