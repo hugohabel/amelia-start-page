@@ -48,8 +48,9 @@ function Widget({ children, style, uuid, widgetType, editAction }: IWidgetProps)
           className={styles.actionRemove}
           onClick={() => {
             handleRemove(uuid, widgetType);
-          }}>
-          <CloseIcon data-testid={uuid} />
+          }}
+          data-testid={uuid}>
+          <CloseIcon />
         </div>
         {/* End Widget Actions */}
       </div>

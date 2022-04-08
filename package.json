@@ -32,7 +32,8 @@
     "start": "react-scripts start",
     "storybook": "start-storybook -p 6006 -s public",
     "test-local": "react-scripts test --watchAll --coverage --collectCoverageFrom=!src/common/contexts/AppState.tsx --collectCoverageFrom=!src/common/state/state.ts --collectCoverageFrom=!src/common/types/AppState.ts --collectCoverageFrom=!src/**/tests/__snapshots__/* --collectCoverageFrom=!src/__snapshots__/* --collectCoverageFrom=!src/index.tsx --collectCoverageFrom=!src/reportWebVitals.ts",
-    "test": "TZ='America/Panama' react-scripts test --watchAll=false"
+    "test": "TZ='America/Panama' react-scripts test --watchAll=false",
+    "update-snapshots": "TZ='America/Panama' react-scripts test -u --watchAll=false"
   },
   "pre-commit": [
     "format",

@@ -3,7 +3,7 @@
 exports[`Countdown Widget matches snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="lightText"
+    class="countdownWidget"
   >
     <h3>
       Christmas
@@ -13,7 +13,9 @@ exports[`Countdown Widget matches snapshot 1`] = `
     >
       in
     </p>
-    <h2>
+    <h2
+      class="remainingTime"
+    >
       195 days 0 hours
     </h2>
   </div>
