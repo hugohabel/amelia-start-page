@@ -11,7 +11,7 @@ for example:
 To configure the target date the user is presented with a form where he can enter the name of the
 event, the date, and format to display the remaining time.
 
-As with every widget, the user has the option to remove it from her start page.
+As with every widget, the user has the option to remove it from their start page.
 
 ## Widget UI
 

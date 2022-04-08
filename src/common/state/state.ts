@@ -5,19 +5,19 @@ import produce, { enableES5 } from 'immer';
 
 // Internal Dependencies
 import {
-  AppAction,
-  AppState,
-  CountdownWidget,
-  Event,
-  Location,
-  WeatherWidget,
+  TAppAction,
+  IAppState,
+  ICountdownWidget,
+  IEvent,
+  ILocation,
+  IWeatherWidget,
 } from '../types/AppState';
 
 if (typeof Proxy === 'undefined') {
   enableES5(); // Shouldn't be necessary if the app runs just on Chrome.
 }
 
-export const initialAppState: AppState = {
+export const initialAppState: IAppState = {
   widgets: [
     {
       type: 'countdown',
@@ -28,7 +28,7 @@ export const initialAppState: AppState = {
             id: 'ba4d-13dbf795d755',
             name: 'Christmas',
             date: '2021-12-25T05:00:00.000Z',
-            background: 'christmas-bg.jpg',
+            background: '',
           },
         ],
       },
@@ -41,8 +41,7 @@ export const initialAppState: AppState = {
   },
 };
 
-// @TO-DO - Extract the logic here to an external utils function and add tests to it.
-export const rootReducer = produce((draft: AppState, action: AppAction) => {
+export const rootReducer = produce((draft: IAppState, action: TAppAction) => {
   switch (action.type) {
     case 'addNewWidget':
       draft.widgets.push(action.widget);
@@ -57,7 +56,7 @@ export const rootReducer = produce((draft: AppState, action: AppAction) => {
       draft.sidebar.activeView = action.activeView;
       break;
     case 'addNewCountdownEvent':
-      const countdownWidget: CountdownWidget = draft.widgets.find((widget) => {
+      const countdownWidget: ICountdownWidget = draft.widgets.find((widget) => {
         return widget.type === 'countdown';
       });
 
@@ -72,7 +71,7 @@ export const rootReducer = produce((draft: AppState, action: AppAction) => {
       });
 
       if (action.widgetType === 'countdown') {
-        const countdownWidgetEventToRemove = widgetsList?.data.events.findIndex((event: Event) => {
+        const countdownWidgetEventToRemove = widgetsList?.data.events.findIndex((event: IEvent) => {
           return event.id === action.uuid;
         });
 
@@ -81,7 +80,7 @@ export const rootReducer = produce((draft: AppState, action: AppAction) => {
         }
       } else if (action.widgetType === 'weather') {
         const weatherWidgetEventToRemove = widgetsList?.data.locations.findIndex(
-          (location: Location) => {
+          (location: ILocation) => {
             return location.id === action.uuid;
           }
         );
@@ -93,14 +92,14 @@ export const rootReducer = produce((draft: AppState, action: AppAction) => {
 
       break;
     case 'addNewWeatherLocation': {
-      const weatherWidget: WeatherWidget = draft.widgets.find((widget) => {
+      const weatherWidget: IWeatherWidget = draft.widgets.find((widget) => {
         return widget.type === 'weather';
       });
 
       if (weatherWidget) {
         weatherWidget.data.locations.push(action.location);
       } else {
-        const newWeatherWidget: WeatherWidget = {
+        const newWeatherWidget: IWeatherWidget = {
           type: 'weather',
           enabled: true,
           data: {

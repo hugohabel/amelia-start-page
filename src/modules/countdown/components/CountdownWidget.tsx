@@ -10,6 +10,12 @@ interface ICountdownWidgetProps {
   eventDate: string;
 }
 
+/**
+ * Countdown Widget
+ *
+ * @param param0 ICountdownWidgetProps
+ * @returns JSX
+ */
 function CountdownWidget({ eventDate, eventName }: ICountdownWidgetProps) {
   let formattedOutput = '';
 

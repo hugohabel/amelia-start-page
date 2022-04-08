@@ -4,16 +4,15 @@ import { debounce } from 'lodash';
 
 // Internal Dependencies
 import { LOCAL_STORAGE_STATE_KEY } from '../constants';
-import { AppAction, AppDispatch, AppState } from '../types/AppState';
+import { TAppAction, TAppDispatch, IAppState } from '../types/AppState';
 import { SafeLocalStorage } from '../utils/localStorage/localStorage';
 import { initialAppState, rootReducer } from '../state/state';
 
-// Types
-
-type AppStateProviderProps = {
+// Interfaces + Types
+interface IAppStateProviderProps {
   children: ReactNode;
-  initialStateOverride?: AppState;
-};
+  initialStateOverride?: IAppState;
+}
 
 // Utility Functions
 
@@ -23,10 +22,10 @@ type AppStateProviderProps = {
  * @param defaultState AppState   Default app state.
  * @returns AppState  State (can be an existing one, or a default one)
  */
-function getStateFromLocalStorageOrInitialize(defaultState: AppState) {
+function getStateFromLocalStorageOrInitialize(defaultState: IAppState) {
   const stateFromLocalStorage = SafeLocalStorage.getInstance().getItem(LOCAL_STORAGE_STATE_KEY);
   if (stateFromLocalStorage) {
-    return JSON.parse(stateFromLocalStorage) as AppState;
+    return JSON.parse(stateFromLocalStorage) as IAppState;
   }
   return defaultState;
 }
@@ -36,7 +35,7 @@ function getStateFromLocalStorageOrInitialize(defaultState: AppState) {
  *
  * @param state AppState  State to be persisted.
  */
-function persistState(state: AppState) {
+function persistState(state: IAppState) {
   SafeLocalStorage.getInstance().setItem(LOCAL_STORAGE_STATE_KEY, JSON.stringify(state));
 }
 
@@ -46,15 +45,15 @@ const debouncePersistState = debounce(persistState, 500, {
   maxWait: 1000,
 });
 
-function reducerWrapper(state: AppState, action: AppAction) {
+function reducerWrapper(state: IAppState, action: TAppAction) {
   const nextState = rootReducer(state, action);
   debouncePersistState(nextState);
   return nextState;
 }
 
 // Create Contexts
-const AppStateContext = createContext<AppState>(initialAppState);
-const AppDispatchContext = createContext<AppDispatch>(() =>
+const AppStateContext = createContext<IAppState>(initialAppState);
+const AppDispatchContext = createContext<TAppDispatch>(() =>
   // eslint-disable-next-line no-console
   console.warn('Calling default dispatch is a no-op!')
 );
@@ -65,7 +64,7 @@ const AppDispatchContext = createContext<AppDispatch>(() =>
  * @param param AppStateProviderProps Props to initialize the app state provider.
  * @returns JSX App Dispatch and App State Contexts.
  */
-export function AppStateProvider({ children, initialStateOverride }: AppStateProviderProps) {
+export function AppStateProvider({ children, initialStateOverride }: IAppStateProviderProps) {
   const hydratedInitialAppState = {
     ...initialAppState,
   };

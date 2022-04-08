@@ -4,7 +4,7 @@ import { fireEvent, render, waitFor } from '@testing-library/react';
 
 // Internal Dependencies
 import { AppStateProvider, useAppDispatch } from '../../../../common/contexts/AppState';
-import CountdownForm from '../CountdownForm';
+import { CountdownForm } from '../CountdownForm';
 
 // Mocked Functions
 jest.mock('../../../../common/contexts/AppState', () => ({

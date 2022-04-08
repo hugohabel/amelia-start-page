@@ -111,6 +111,9 @@ personal experience, in addition of some inspiration from
 
 ### Types & Interfaces
 
+(Pending) - There seems to be an open
+[issue](https://github.com/facebook/create-react-app/issues/10352) with custom `d.ts` files.
+
 - Declare common types inside `amelia.d.ts`.
 - When declaring a type use the prefix `T`, for example: `TIconsList`. Do the same for interfaces
   with the `I` prefix.

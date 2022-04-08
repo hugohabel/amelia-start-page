@@ -10,7 +10,7 @@ import { CountdownWidget } from './modules/countdown/components/CountdownWidget'
 
 import { AppStateProvider, useAppState, useAppDispatch } from './common/contexts/AppState';
 import { initialAppState } from './common/state/state';
-import { Event, Location } from './common/types/AppState';
+import { IEvent, ILocation } from './common/types/AppState';
 
 // Styles
 import './App.css';
@@ -23,7 +23,7 @@ function Home() {
 
   const myWidgets = widgets.map((widget: any) => {
     if (widget.type === 'countdown') {
-      return widget.data.events.map((countdownEvent: Event) => {
+      return widget.data.events.map((countdownEvent: IEvent) => {
         return (
           <Widget
             uuid={countdownEvent.id}
@@ -37,7 +37,7 @@ function Home() {
     }
     if (widget.type === 'weather') {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
-      return widget.data.locations.map((weatherLocation: Location) => {
+      return widget.data.locations.map((weatherLocation: ILocation) => {
         return null;
       });
     }

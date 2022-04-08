@@ -1,26 +1,26 @@
 // App State
-export interface AppState {
+export interface IAppState {
   widgets: any[];
-  sidebar: Sidebar;
+  sidebar: ISidebar;
 }
 
 // Sidebar
-export interface Sidebar {
+export interface ISidebar {
   isOpen: boolean;
-  activeMenu: ActiveMenu;
-  activeView: ActiveView;
+  activeMenu: TActiveMenu;
+  activeView: TActiveView;
 }
 
 // Countdown Widget
-export interface CountdownWidget {
+export interface ICountdownWidget {
   type: 'countdown';
   enabled: boolean;
   data: {
-    events: Event[];
+    events: IEvent[];
   };
 }
 
-export interface Event {
+export interface IEvent {
   id: string;
   name: string;
   date: string;
@@ -29,7 +29,7 @@ export interface Event {
 // End Countdown Widget
 
 // Weather Widget
-export interface WeatherWidget {
+export interface IWeatherWidget {
   type: 'weather';
   enabled: boolean;
   data: {
@@ -37,7 +37,7 @@ export interface WeatherWidget {
   };
 }
 
-export interface Location {
+export interface ILocation {
   id: string;
   lat: string;
   lng: string;
@@ -45,18 +45,18 @@ export interface Location {
 // End Weather Widget
 
 // Auxiliary Types
-export type ActiveMenu = 'add' | 'about' | 'config' | null;
-export type ActiveView = 'add_countdown' | 'add_weather' | null;
+export type TActiveMenu = 'add' | 'about' | 'config' | null;
+export type TActiveView = 'add_countdown' | 'add_weather' | null;
 
 // App State Actions
-type Action =
-  | { type: 'addNewWidget'; widget: CountdownWidget | WeatherWidget }
+type TAction =
+  | { type: 'addNewWidget'; widget: ICountdownWidget | IWeatherWidget }
   | { type: 'toggleSidebar' }
-  | { type: 'setActiveMenu'; activeMenu: ActiveMenu }
-  | { type: 'setActiveView'; activeView: ActiveView }
-  | { type: 'addNewCountdownEvent'; event: Event }
+  | { type: 'setActiveMenu'; activeMenu: TActiveMenu }
+  | { type: 'setActiveView'; activeView: TActiveView }
+  | { type: 'addNewCountdownEvent'; event: IEvent }
   | { type: 'addNewWeatherLocation'; location: Location }
   | { type: 'removeWidgetItem'; uuid: string; widgetType: string };
 
-export type AppAction = Action;
-export type AppDispatch = (action: AppAction) => void;
+export type TAppAction = TAction;
+export type TAppDispatch = (action: TAppAction) => void;

@@ -1,5 +1,5 @@
 // Internal Dependencies
-import { ActiveMenu } from '../../../common/types/AppState';
+import { TActiveMenu } from '../../../common/types/AppState';
 import { useAppState, useAppDispatch } from '../../../common/contexts/AppState';
 import { PlusIcon } from '../../../common/components/icons/PlusIcon';
 import { InfoIcon } from '../../../common/components/icons/InfoIcon';
@@ -45,7 +45,7 @@ function MenubarItem({ name, configKey }: IMenubarItemProps) {
         type: 'toggleSidebar',
       });
     }
-    dispatch({ type: 'setActiveMenu', activeMenu: configKey as ActiveMenu });
+    dispatch({ type: 'setActiveMenu', activeMenu: configKey as TActiveMenu });
   }
 
   return (

@@ -6,7 +6,7 @@ import WatchLaterOutlinedIcon from '@material-ui/icons/WatchLaterOutlined';
 // Internal Dependencies
 import { WIDGETS_LIST } from '../../../common/constants';
 import { useAppDispatch } from '../../../common/contexts/AppState';
-import { ActiveView } from '../../../common/types/AppState';
+import { TActiveView } from '../../../common/types/AppState';
 
 // Styles
 import styles from './WidgetsList.module.css';
@@ -30,7 +30,7 @@ function WidgetsList() {
   function handleListItemClick(widgetName: string) {
     dispatch({
       type: 'setActiveView',
-      activeView: `add_${widgetName}` as ActiveView,
+      activeView: `add_${widgetName}` as TActiveView,
     });
   }
 
@@ -67,4 +67,4 @@ function WidgetsList() {
   );
 }
 
-export default WidgetsList;
+export { WidgetsList };

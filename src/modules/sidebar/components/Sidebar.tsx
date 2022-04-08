@@ -4,18 +4,18 @@ import CancelOutlinedIcon from '@material-ui/icons/CancelOutlined';
 // Internal Dependencies
 import { MENUBAR, ACTIONS } from '../../../common/constants';
 import { useAppState, useAppDispatch } from '../../../common/contexts/AppState';
-import WidgetsList from '../../widgetsList/components/WidgetsList';
+import { WidgetsList } from '../../widgetsList/components/WidgetsList';
 import CountdownFormAddView from '../../countdownFormAddView/components/CountdownFormAddView';
 
 // Types
-import { Sidebar as SidebarType } from '../../../common/types/AppState';
+import { ISidebar } from '../../../common/types/AppState';
 
 // Styles
 import styles from './Sidebar.module.css';
 
 // Utility Functions
 
-function viewHandler(sidebar: SidebarType): number {
+function viewHandler(sidebar: ISidebar): number {
   let activeView = 0;
 
   if (sidebar.activeMenu === null) {

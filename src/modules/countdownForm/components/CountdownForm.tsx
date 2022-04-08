@@ -1,5 +1,4 @@
 // External Dependencies
-import React from 'react';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { v4 as uuidv4 } from 'uuid';
@@ -11,9 +10,17 @@ import { useAppDispatch } from '../../../common/contexts/AppState';
 // Styles
 import styles from './CountdownForm.module.css';
 
+/**
+ * Countdown Form
+ *
+ * Form used to create a new countdown.
+ *
+ * @returns JSX
+ */
 function CountdownForm() {
   const dispatch = useAppDispatch();
 
+  // Form rules and validations (Managed with Formik)
   const formik = useFormik({
     initialValues: {
       eventName: '',
@@ -77,4 +84,4 @@ function CountdownForm() {
   );
 }
 
-export default CountdownForm;
+export { CountdownForm };
