@@ -1,3 +1,5 @@
+import { CountdownFormat } from './amelia';
+
 // App State
 export interface IAppState {
   widgets: any[];
@@ -24,7 +26,7 @@ export interface IEvent {
   id: string;
   name: string;
   date: string;
-  background: string;
+  format: CountdownFormat;
 }
 // End Countdown Widget
 

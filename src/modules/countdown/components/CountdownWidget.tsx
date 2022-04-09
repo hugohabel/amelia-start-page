@@ -1,4 +1,5 @@
 // Internal Dependencies
+import { CountdownFormat } from '../../../common/types/amelia';
 import { getDiffUntilDate, formatTimeDiff } from '../utils/timeCalculations/timeCalculations';
 
 // Styles
@@ -8,20 +9,21 @@ import styles from './CountdownWidget.module.css';
 interface ICountdownWidgetProps {
   eventName: string;
   eventDate: string;
+  eventFormat: CountdownFormat;
 }
 
 /**
  * Countdown Widget
  *
- * @param param0 ICountdownWidgetProps
+ * @param params ICountdownWidgetProps
  * @returns JSX
  */
-function CountdownWidget({ eventDate, eventName }: ICountdownWidgetProps) {
+function CountdownWidget({ eventDate, eventName, eventFormat }: ICountdownWidgetProps) {
   let formattedOutput = '';
 
   try {
     const timeDiff = getDiffUntilDate(eventDate);
-    formattedOutput = formatTimeDiff(timeDiff, 'days+hours');
+    formattedOutput = formatTimeDiff(timeDiff, eventFormat);
   } catch (err) {
     // logError(err.message);
   }

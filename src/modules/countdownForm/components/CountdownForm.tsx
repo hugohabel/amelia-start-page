@@ -1,10 +1,12 @@
 // External Dependencies
+import { FormControlLabel, Radio, RadioGroup } from '@material-ui/core';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { v4 as uuidv4 } from 'uuid';
 import dayjs from 'dayjs';
 
 // Internal Dependencies
+import { CountdownFormat } from '../../../common/types/amelia';
 import { useAppDispatch } from '../../../common/contexts/AppState';
 
 // Styles
@@ -25,6 +27,7 @@ function CountdownForm() {
     initialValues: {
       eventName: '',
       eventDate: '',
+      eventFormat: 'days+hours',
     },
     validationSchema: Yup.object({
       eventName: Yup.string()
@@ -39,7 +42,7 @@ function CountdownForm() {
           id: uuidv4(),
           name: values.eventName,
           date: dayjs(values.eventDate).toISOString(),
-          background: '',
+          format: values.eventFormat as CountdownFormat,
         },
       });
       dispatch({
@@ -78,6 +81,21 @@ function CountdownForm() {
         <div className={styles.formError}>{formik.errors.eventDate}</div>
       ) : null}
       {/* End Event Date + Error Display */}
+
+      {/* Event Format */}
+      <h4>How do you want to display the countdown?</h4>
+      <RadioGroup
+        defaultValue={formik.initialValues.eventFormat}
+        value={formik.values.eventFormat.toString()}
+        name="eventFormat"
+        className={styles.radioGroup}
+        onChange={(event) => {
+          formik.setFieldValue('eventFormat', event.currentTarget.value);
+        }}>
+        <FormControlLabel value="days+hours" control={<Radio />} label="Days and Hours" />
+        <FormControlLabel value="days" control={<Radio />} label="Days" />
+      </RadioGroup>
+      {/* End Event Format */}
 
       <button type="submit">Submit</button>
     </form>

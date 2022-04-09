@@ -9,7 +9,7 @@ import { CountdownWidget } from '../modules/countdown/components/CountdownWidget
 import '../index.css';
 
 export default {
-  title: 'Countdown Widget',
+  title: 'Widgets/Countdown',
   component: CountdownWidget,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
@@ -44,4 +44,5 @@ export const Basic = Template.bind({});
 Basic.args = {
   eventName: 'Christmas',
   eventDate: '2022-12-25T05:00:00.000Z',
+  eventFormat: 'days+hours',
 };

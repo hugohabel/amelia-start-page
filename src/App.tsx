@@ -30,7 +30,11 @@ function Home() {
             widgetType="countdown"
             key={countdownEvent.id}
             editAction={false}>
-            <CountdownWidget eventName={countdownEvent.name} eventDate={countdownEvent.date} />
+            <CountdownWidget
+              eventName={countdownEvent.name}
+              eventDate={countdownEvent.date}
+              eventFormat={countdownEvent?.format ?? 'days+hours'}
+            />
           </Widget>
         );
       });

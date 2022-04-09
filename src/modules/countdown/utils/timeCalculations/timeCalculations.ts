@@ -2,6 +2,7 @@
 import dayjs from 'dayjs';
 
 // Internal Dependencies
+import { CountdownFormat } from '../../../../common/types/amelia';
 import { DAYS_DIFF_TEMPLATE, DAYS_HOURS_DIFF_TEMPLATE } from '../../../../common/constants';
 
 // Types
@@ -10,8 +11,6 @@ type TimeDiff = {
   hours: string;
   minutes: string;
 };
-
-type Format = 'days' | 'days+hours';
 
 /**
  * Gets time difference in days, hours, and minutes between now and a given date.
@@ -52,7 +51,10 @@ export const getDiffUntilDate = function getDiffUntilDate(targetDate: string): T
  *
  * @returns string  Strings with the values interpolated.
  */
-export const formatTimeDiff = function formatTimeDiff(timeDiff: TimeDiff, format: Format): string {
+export const formatTimeDiff = function formatTimeDiff(
+  timeDiff: TimeDiff,
+  format: CountdownFormat
+): string {
   switch (format) {
     case 'days':
       return DAYS_DIFF_TEMPLATE.replace('%daysToken%', timeDiff.days);

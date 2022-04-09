@@ -3,3 +3,10 @@
   color: #E13A38;
   margin-bottom: 16px;
 }
+.radioGroup {
+  margin-top: 4px;
+}
+.radioGroup span {
+  font-size: 14px;
+  margin-left: 8px;
+}

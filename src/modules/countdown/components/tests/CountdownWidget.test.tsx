@@ -19,7 +19,11 @@ describe('Countdown Widget', () => {
 
   it('matches snapshot', async () => {
     const component = render(
-      <CountdownWidget eventName="Christmas" eventDate="2021-12-25T05:00:00.000Z" />
+      <CountdownWidget
+        eventName="Christmas"
+        eventDate="2021-12-25T05:00:00.000Z"
+        eventFormat="days+hours"
+      />
     );
 
     expect(component.asFragment()).toMatchSnapshot();
