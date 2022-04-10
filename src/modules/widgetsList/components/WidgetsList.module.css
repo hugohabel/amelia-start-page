@@ -1,8 +1,7 @@
 /* Widgets List */
-
 .widgetsListItem {
-  background: #FFFFFF;
-  padding: 15px 25px;
+  background: var(--main-bg-color-primary);
+  padding: 16px 24px;
   border-radius: .428rem;
   line-height: 20px;
   display: flex;
@@ -10,11 +9,8 @@
   margin-bottom: 20px;
   border: 1px solid transparent;
 }
-.widgetsListItem:hover {
-  border: 1px solid #7367f0;
-}
 .widgetsListItem > svg {
-  color: #F3AC4A;
+  color: var(--main-icons-color);
   margin-right: 8px;
 }
 .widgetsListItemHidden {
@@ -25,26 +21,25 @@
   cursor: auto;
 }
 .widgetsListItemUpcoming > svg {
-  color: #FAD299;
+  color: var(--main-icons-color);
 }
 .widgetsListItemUpcomingTitle {
-  color: #7367f0;
+  color: var(--main-text-color);
   margin-left: 10px;
   background: #FFEACA;
   padding: 0px 8px;
-  border-radius: 5px;
+  border-radius: 0.428rem;
   font-size: 12px;
   font-weight: bold;
 }
 .widgetsListTitle {
   margin-bottom: 5px;
   font-weight: 600;
-  color: #7367f0;
+  color: var(--main-header-text-color);
   letter-spacing: -1;
 }
 .widgetsListSubtitle {
   margin-bottom: 20px;
   font-size: 12px;
 }
-
 /* End Widgets List */

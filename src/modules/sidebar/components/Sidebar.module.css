@@ -1,7 +1,6 @@
 /* Side Bar */
-
 .sidebar {
-  background-color: #F9F9F9;
+  background-color: var(--main-bg-color);
   width: 0;
   height: 100vh;
   box-shadow: -3px 0px 8px 2px rgba(201, 201, 201, 0.75) inset;
@@ -12,7 +11,7 @@
   position: relative;
 }
 .isSidebarOpen {
-  width: 375px;
+  width: 376px;
   transition: width 0.5s;
 }
 .sidebarInnerContainer {
@@ -36,8 +35,4 @@
   top: 16px;
   cursor: pointer;
 }
-.isSidebarOpen .sidebarCloseIcon:hover {
-  color: #2D3A99;
-}
-
 /* End Side Bar */

@@ -11,6 +11,7 @@ import { useAppDispatch } from '../../../common/contexts/AppState';
 
 // Styles
 import styles from './CountdownForm.module.css';
+import sharedStyles from '../../../common/styles/Shared.module.css';
 
 /**
  * Countdown Form
@@ -64,7 +65,9 @@ function CountdownForm() {
         value={formik.values.eventName}
       />
       {formik.touched.eventName && formik.errors.eventName ? (
-        <div className={styles.formError}>{formik.errors.eventName}</div>
+        <div className={`${styles.formError} ${sharedStyles.errorText}`}>
+          {formik.errors.eventName}
+        </div>
       ) : null}
       {/* End Event Name + Error Display */}
 
@@ -78,7 +81,9 @@ function CountdownForm() {
         value={formik.values.eventDate}
       />
       {formik.touched.eventDate && formik.errors.eventDate ? (
-        <div className={styles.formError}>{formik.errors.eventDate}</div>
+        <div className={`${styles.formError} ${sharedStyles.errorText}`}>
+          {formik.errors.eventDate}
+        </div>
       ) : null}
       {/* End Event Date + Error Display */}
 

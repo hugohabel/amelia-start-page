@@ -1,19 +1,19 @@
 /* Main Styles */
 .mainContainer {
-  background-color: #FFFFFF;
+  background-color: var(--main-widget-bg-color);
   border-radius: .428rem;
   display: flex;
-  margin: 0 25px 25px 0;
+  margin: 0 24px 24px 0;
   padding: 16px;
   position: relative;
-  width: 343px;
-  color: #5E5873;
+  width: 344px;
+  color: var(--main-widget-text-color);
 }
 /* End Main Styles */
 
 /* Actions */
 .actionRemove {
-  top: 9px;
+  top: 8px;
   cursor: pointer;
   position: absolute;
   right: 12px;

@@ -1,15 +1,9 @@
-.countdownWidget {
-  color: #5E5873;
-}
 .countdownWidget > h3 {
   word-break: break-all;
-}
-.remainingTime {
-  color: #7367f0;
 }
 .separatorWord {
   margin: 5px 10px;
 }
 .biggerText {
-  font-size: 30px;
+  font-size: 32px;
 }

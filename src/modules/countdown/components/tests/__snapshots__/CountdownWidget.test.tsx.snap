@@ -14,7 +14,7 @@ exports[`Countdown Widget matches snapshot 1`] = `
       in
     </p>
     <h2
-      class="remainingTime"
+      class="mainText"
     >
       195 days 0 hours
     </h2>

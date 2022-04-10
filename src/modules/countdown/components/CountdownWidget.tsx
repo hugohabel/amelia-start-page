@@ -4,6 +4,7 @@ import { getDiffUntilDate, formatTimeDiff } from '../utils/timeCalculations/time
 
 // Styles
 import styles from './CountdownWidget.module.css';
+import sharedStyles from '../../../common/styles/Shared.module.css';
 
 // Interfaces + Types
 interface ICountdownWidgetProps {
@@ -32,7 +33,7 @@ function CountdownWidget({ eventDate, eventName, eventFormat }: ICountdownWidget
     <div className={styles.countdownWidget}>
       <h3>{eventName}</h3>
       <p className={styles.separatorWord}>in</p>
-      <h2 className={styles.remainingTime}>{formattedOutput}</h2>
+      <h2 className={sharedStyles.mainText}>{formattedOutput}</h2>
     </div>
   );
 }
