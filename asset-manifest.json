@@ -1,25 +1,15 @@
 {
   "files": {
-    "main.css": "/amelia-start-page/static/css/main.9e07df4f.chunk.css",
-    "main.js": "/amelia-start-page/static/js/main.20b2fa0a.chunk.js",
-    "main.js.map": "/amelia-start-page/static/js/main.20b2fa0a.chunk.js.map",
-    "runtime-main.js": "/amelia-start-page/static/js/runtime-main.3f4bf828.js",
-    "runtime-main.js.map": "/amelia-start-page/static/js/runtime-main.3f4bf828.js.map",
-    "static/css/2.679831fc.chunk.css": "/amelia-start-page/static/css/2.679831fc.chunk.css",
-    "static/js/2.85ae64a5.chunk.js": "/amelia-start-page/static/js/2.85ae64a5.chunk.js",
-    "static/js/2.85ae64a5.chunk.js.map": "/amelia-start-page/static/js/2.85ae64a5.chunk.js.map",
-    "static/js/3.37859ded.chunk.js": "/amelia-start-page/static/js/3.37859ded.chunk.js",
-    "static/js/3.37859ded.chunk.js.map": "/amelia-start-page/static/js/3.37859ded.chunk.js.map",
+    "main.css": "/amelia-start-page/static/css/main.4757084e.css",
+    "main.js": "/amelia-start-page/static/js/main.babd7e18.js",
+    "static/js/787.09a74ec8.chunk.js": "/amelia-start-page/static/js/787.09a74ec8.chunk.js",
     "index.html": "/amelia-start-page/index.html",
-    "static/css/2.679831fc.chunk.css.map": "/amelia-start-page/static/css/2.679831fc.chunk.css.map",
-    "static/css/main.9e07df4f.chunk.css.map": "/amelia-start-page/static/css/main.9e07df4f.chunk.css.map",
-    "static/js/2.85ae64a5.chunk.js.LICENSE.txt": "/amelia-start-page/static/js/2.85ae64a5.chunk.js.LICENSE.txt"
+    "main.4757084e.css.map": "/amelia-start-page/static/css/main.4757084e.css.map",
+    "main.babd7e18.js.map": "/amelia-start-page/static/js/main.babd7e18.js.map",
+    "787.09a74ec8.chunk.js.map": "/amelia-start-page/static/js/787.09a74ec8.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.3f4bf828.js",
-    "static/css/2.679831fc.chunk.css",
-    "static/js/2.85ae64a5.chunk.js",
-    "static/css/main.9e07df4f.chunk.css",
-    "static/js/main.20b2fa0a.chunk.js"
+    "static/css/main.4757084e.css",
+    "static/js/main.babd7e18.js"
   ]
 }
