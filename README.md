@@ -170,6 +170,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 - [Img Shields](https://shields.io)
 - [GitHub Pages](https://pages.github.com)
+- [emoji-picker-react](https://github.com/ealush/emoji-picker-react)
 
 <!-- End Acknowledgements -->
 

@@ -38,6 +38,7 @@ exports[`Countdown Form Add View matches snapshot 1`] = `
     >
       <div
         class="emojiPlaceholder"
+        data-testid="event-emoji"
       >
         💡
       </div>

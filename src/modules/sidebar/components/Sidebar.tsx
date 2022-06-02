@@ -39,6 +39,7 @@ function mapStateToView(activeView: number) {
       return <WidgetsList />;
     case 11:
       return <CountdownFormAddView />;
+    /* istanbul ignore next */
     default:
       return null;
   }

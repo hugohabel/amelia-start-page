@@ -1,6 +1,3 @@
-// External Dependencies
-import EditAttributesOutlinedIcon from '@material-ui/icons/EditAttributesOutlined';
-
 // Internal Dependencies
 import { CloseIcon } from '../../icons/CloseIcon';
 import { useAppDispatch } from '../../../contexts/AppState';
@@ -15,7 +12,7 @@ interface IWidgetProps {
   style?: any;
   uuid: string;
   widgetType: string;
-  editAction: boolean;
+  editAction?: boolean;
 }
 
 /**
@@ -26,6 +23,7 @@ interface IWidgetProps {
  * @param params IWidgetProps
  * @returns JSX
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 function Widget({ children, style, uuid, widgetType, editAction }: IWidgetProps) {
   const dispatch = useAppDispatch();
 
@@ -48,12 +46,12 @@ function Widget({ children, style, uuid, widgetType, editAction }: IWidgetProps)
 
         {/* Widget Actions */}
 
-        {/* @TODO: Edit action will be improved as part of ticket https://www.notion.so/Improve-Widget-Edit-action-d172e1642bd84dd7b26af97286298045 */}
-        {editAction && (
+        {/* @TODO: Edit action will be improved as part of separate ticket */}
+        {/* editAction && (
           <div className={styles.actionEdit}>
             <EditAttributesOutlinedIcon fontSize="small" />
           </div>
-        )}
+        ) */}
         <div
           className={styles.actionRemove}
           onClick={() => {

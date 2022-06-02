@@ -45,6 +45,10 @@ describe('Countdown Form', () => {
       const eventNameInputElement = await component.findByPlaceholderText('Event name');
       expect(eventNameInputElement).toBeInTheDocument();
 
+      // Get Event Emoji Input
+      const eventEmojiInputElement = await component.findByTestId('event-emoji');
+      expect(eventEmojiInputElement).toBeInTheDocument();
+
       // Get Event Date Input
       const eventDateInputElement = await component.findByPlaceholderText('Event date');
       expect(eventDateInputElement).toBeInTheDocument();
@@ -52,6 +56,8 @@ describe('Countdown Form', () => {
       // Set Form Values
       fireEvent.change(eventNameInputElement, { target: { value: EVENTNAMEVALUE } });
       fireEvent.change(eventDateInputElement, { target: { value: EVENTDATEVALUE } });
+
+      fireEvent.click(eventEmojiInputElement);
 
       // Trigger Click
       fireEvent.click(submitButtonElement);

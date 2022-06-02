@@ -45,4 +45,5 @@ Basic.args = {
   eventName: 'Christmas',
   eventDate: '2022-12-25T05:00:00.000Z',
   eventFormat: 'days+hours',
+  eventEmoji: '🎄',
 };

@@ -58,4 +58,17 @@ describe('Utils - Time Calculations', () => {
 
     expect(result).toEqual('195 days 18 hours');
   });
+
+  it('gets template with parsed values in the past - days + hours', async () => {
+    // Mocked values
+    const timeDiff = {
+      days: '-195',
+      hours: '18',
+      minutes: '34',
+    };
+
+    const result = formatTimeDiff(timeDiff, 'days+hours');
+
+    expect(result).toEqual('195 days 18 hours ago');
+  });
 });

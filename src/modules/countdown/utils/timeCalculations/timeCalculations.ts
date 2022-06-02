@@ -84,6 +84,7 @@ export const formatTimeDiff = function formatTimeDiff(
         '%hoursToken%',
         timeDiff.hours
       );
+    /* istanbul ignore next */
     default:
       return '';
   }

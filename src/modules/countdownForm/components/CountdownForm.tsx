@@ -31,6 +31,8 @@ function CountdownForm() {
   const dispatch = useAppDispatch();
 
   // Handlers
+
+  /* istanbul ignore next */
   const onEmojiClickHandler = (event: any, emojiObject: IEmojiData) => {
     setChosenEmoji(emojiObject);
     setDisplayEmojiPicker(false);
@@ -74,7 +76,10 @@ function CountdownForm() {
   return (
     <form onSubmit={formik.handleSubmit} autoComplete="off">
       <div className={styles.inputContainer}>
-        <div onClick={onEmojiPlaceholderClick} className={styles.emojiPlaceholder}>
+        <div
+          data-testid="event-emoji"
+          onClick={onEmojiPlaceholderClick}
+          className={styles.emojiPlaceholder}>
           {chosenEmoji ? chosenEmoji?.emoji : '💡'}
         </div>
         {/* Event Name + Error Display */}

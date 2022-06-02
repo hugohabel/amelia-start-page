@@ -10,7 +10,7 @@ import { CountdownWidget } from './modules/countdown/components/CountdownWidget'
 
 import { AppStateProvider, useAppState, useAppDispatch } from './common/contexts/AppState';
 import { initialAppState } from './common/state/state';
-import { IEvent, ILocation } from './common/types/AppState';
+import { IEvent } from './common/types/AppState';
 
 // Styles
 import './App.css';
@@ -22,6 +22,7 @@ function Home() {
   const { widgets } = useAppState();
 
   const myWidgets = widgets.map((widget: any) => {
+    /* istanbul ignore next */
     if (widget.type === 'countdown') {
       return widget.data.events.map((countdownEvent: IEvent) => {
         return (
@@ -40,13 +41,14 @@ function Home() {
         );
       });
     }
-    if (widget.type === 'weather') {
+    /* if (widget.type === 'weather') {
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       return widget.data.locations.map((weatherLocation: ILocation) => {
         return null;
       });
-    }
+    } */
 
+    /* istanbul ignore next */
     return null;
   });
 
@@ -84,6 +86,7 @@ function App() {
   useEffect(
     function toggleSidebar() {
       // Close the sidebar, in case it's open.
+      /* istanbul ignore else */
       if (sidebar.isOpen) {
         dispatch({
           type: 'toggleSidebar',

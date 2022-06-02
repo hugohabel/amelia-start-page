@@ -114,6 +114,7 @@ exports[`Sidebar matches snapshot - with sidebar opened - CountdownFormAddView 1
         >
           <div
             class="emojiPlaceholder"
+            data-testid="event-emoji"
           >
             💡
           </div>

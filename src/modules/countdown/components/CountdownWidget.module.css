@@ -2,11 +2,11 @@
   color: var(--tangerine);
   word-break: break-all;
 }
+.countdownWidget > h2 {
+  color: var(--purple);
+}
 .separatorWord {
   color: var(--white);
   margin: 5px 10px;
   height: 18.39px;
-}
-.biggerText {
-  font-size: 32px;
 }
