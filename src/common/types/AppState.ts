@@ -27,6 +27,7 @@ export interface IEvent {
   name: string;
   date: string;
   format: CountdownFormat;
+  emoji: string;
 }
 // End Countdown Widget
 

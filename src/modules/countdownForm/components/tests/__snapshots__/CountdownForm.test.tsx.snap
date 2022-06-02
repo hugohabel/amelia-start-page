@@ -5,13 +5,23 @@ exports[`Countdown Form matches snapshot 1`] = `
   <form
     autocomplete="off"
   >
-    <input
-      id="eventName"
-      name="eventName"
-      placeholder="Event name"
-      type="text"
-      value=""
-    />
+    <div
+      class="inputContainer"
+    >
+      <div
+        class="emojiPlaceholder"
+      >
+        💡
+      </div>
+      <input
+        class="eventNameInput"
+        id="eventName"
+        name="eventName"
+        placeholder="Event name"
+        type="text"
+        value=""
+      />
+    </div>
     <input
       id="eventDate"
       name="eventDate"
@@ -19,7 +29,9 @@ exports[`Countdown Form matches snapshot 1`] = `
       type="date"
       value=""
     />
-    <h4>
+    <h4
+      class="subtitle"
+    >
       How do you want to display the countdown?
     </h4>
     <div
@@ -32,6 +44,7 @@ exports[`Countdown Form matches snapshot 1`] = `
         <span
           aria-disabled="false"
           class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root MuiRadio-colorSecondary PrivateSwitchBase-checked-2 Mui-checked MuiIconButton-colorSecondary"
+          style="color: rgb(149, 128, 255);"
         >
           <span
             class="MuiIconButton-label"
@@ -84,6 +97,7 @@ exports[`Countdown Form matches snapshot 1`] = `
         <span
           aria-disabled="false"
           class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root MuiRadio-colorSecondary MuiIconButton-colorSecondary"
+          style="color: rgb(149, 128, 255);"
         >
           <span
             class="MuiIconButton-label"

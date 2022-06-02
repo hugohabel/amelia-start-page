@@ -10,13 +10,27 @@ exports[`Sidebar matches snapshot - with sidebar closed 1`] = `
       data-testid="close-sidebar"
     >
       <svg
-        aria-hidden="true"
-        class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
-        focusable="false"
+        fill="none"
+        height="16"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
         viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <path
-          d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.59-13L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z"
+        <line
+          x1="18"
+          x2="6"
+          y1="6"
+          y2="18"
+        />
+        <line
+          x1="6"
+          x2="18"
+          y1="6"
+          y2="18"
         />
       </svg>
     </div>
@@ -37,13 +51,27 @@ exports[`Sidebar matches snapshot - with sidebar opened - CountdownFormAddView 1
       data-testid="close-sidebar"
     >
       <svg
-        aria-hidden="true"
-        class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
-        focusable="false"
+        fill="none"
+        height="16"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
         viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <path
-          d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.59-13L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z"
+        <line
+          x1="18"
+          x2="6"
+          y1="6"
+          y2="18"
+        />
+        <line
+          x1="6"
+          x2="18"
+          y1="6"
+          y2="18"
         />
       </svg>
     </div>
@@ -81,13 +109,23 @@ exports[`Sidebar matches snapshot - with sidebar opened - CountdownFormAddView 1
       <form
         autocomplete="off"
       >
-        <input
-          id="eventName"
-          name="eventName"
-          placeholder="Event name"
-          type="text"
-          value=""
-        />
+        <div
+          class="inputContainer"
+        >
+          <div
+            class="emojiPlaceholder"
+          >
+            💡
+          </div>
+          <input
+            class="eventNameInput"
+            id="eventName"
+            name="eventName"
+            placeholder="Event name"
+            type="text"
+            value=""
+          />
+        </div>
         <input
           id="eventDate"
           name="eventDate"
@@ -95,7 +133,9 @@ exports[`Sidebar matches snapshot - with sidebar opened - CountdownFormAddView 1
           type="date"
           value=""
         />
-        <h4>
+        <h4
+          class="subtitle"
+        >
           How do you want to display the countdown?
         </h4>
         <div
@@ -108,6 +148,7 @@ exports[`Sidebar matches snapshot - with sidebar opened - CountdownFormAddView 1
             <span
               aria-disabled="false"
               class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root MuiRadio-colorSecondary PrivateSwitchBase-checked-2 Mui-checked MuiIconButton-colorSecondary"
+              style="color: rgb(149, 128, 255);"
             >
               <span
                 class="MuiIconButton-label"
@@ -160,6 +201,7 @@ exports[`Sidebar matches snapshot - with sidebar opened - CountdownFormAddView 1
             <span
               aria-disabled="false"
               class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-1 MuiRadio-root MuiRadio-colorSecondary MuiIconButton-colorSecondary"
+              style="color: rgb(149, 128, 255);"
             >
               <span
                 class="MuiIconButton-label"
@@ -227,13 +269,27 @@ exports[`Sidebar matches snapshot - with sidebar opened - WidgetsList 1`] = `
       data-testid="close-sidebar"
     >
       <svg
-        aria-hidden="true"
-        class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
-        focusable="false"
+        fill="none"
+        height="16"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
         viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <path
-          d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.59-13L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z"
+        <line
+          x1="18"
+          x2="6"
+          y1="6"
+          y2="18"
+        />
+        <line
+          x1="6"
+          x2="18"
+          y1="6"
+          y2="18"
         />
       </svg>
     </div>
@@ -328,13 +384,27 @@ exports[`Sidebar matches snapshot - with sidebar opened 1`] = `
       data-testid="close-sidebar"
     >
       <svg
-        aria-hidden="true"
-        class="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall"
-        focusable="false"
+        fill="none"
+        height="16"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
         viewBox="0 0 24 24"
+        width="16"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <path
-          d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.59-13L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41z"
+        <line
+          x1="18"
+          x2="6"
+          y1="6"
+          y2="18"
+        />
+        <line
+          x1="6"
+          x2="18"
+          y1="6"
+          y2="18"
         />
       </svg>
     </div>

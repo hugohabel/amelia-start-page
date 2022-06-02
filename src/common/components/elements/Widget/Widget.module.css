@@ -1,29 +1,34 @@
 /* Main Styles */
 .mainContainer {
-  background-color: var(--main-widget-bg-color);
+  background-color: var(--dark-jungle);
   border-radius: .428rem;
+  border: 1px solid var(--cyan);
+  color: var(--purple);
   display: flex;
   margin: 0 24px 24px 0;
   padding: 16px;
   position: relative;
   width: 344px;
-  color: var(--main-widget-text-color);
 }
 /* End Main Styles */
 
 /* Actions */
 .actionRemove {
-  top: 8px;
+  color: var(--steel);
   cursor: pointer;
   position: absolute;
   right: 12px;
+  top: 8px;
   width: 12px;
 }
+.actionRemove:hover {
+  color: var(--gray);
+}
 .actionEdit {
-  top: 3px;
   cursor: pointer;
   position: absolute;
   right: 12px;
+  top: 3px;
   width: 12px;
 }
 /* End Actions */

@@ -3,24 +3,27 @@
   flex-direction: row;
 }
 .container {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  height: 100vh;
   flex-grow: 1;
-  background-color: var(--main-bg-color);
+  height: 100vh;
+  min-height: 100vh;
 }
 .main {
-  padding: 5rem 2rem;
+  align-content: flex-start;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  align-content: flex-start;
   height: 100vh;
+  padding: 5rem 2rem;
   position: relative;
 }
-.imageAttribution {
-  position: absolute;
+.attribution {
   bottom: 10px;
+  color: var(--steel);
+  position: absolute;
   right: 10px;
+}
+.attribution > span {
+  color: var(--tangerine);
 }

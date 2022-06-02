@@ -23,6 +23,7 @@ describe('Countdown Widget', () => {
         eventName="Christmas"
         eventDate="2021-12-25T05:00:00.000Z"
         eventFormat="days+hours"
+        eventEmoji="💡"
       />
     );
 

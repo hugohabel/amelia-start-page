@@ -3,7 +3,12 @@ import dayjs from 'dayjs';
 
 // Internal Dependencies
 import { CountdownFormat } from '../../../../common/types/amelia';
-import { DAYS_DIFF_TEMPLATE, DAYS_HOURS_DIFF_TEMPLATE } from '../../../../common/constants';
+import {
+  DAYS_DIFF_TEMPLATE,
+  DAYS_HOURS_DIFF_TEMPLATE,
+  PAST_DAYS_DIFF_TEMPLATE,
+  PAST_DAYS_HOURS_DIFF_TEMPLATE,
+} from '../../../../common/constants';
 
 // Types
 type TimeDiff = {
@@ -43,6 +48,10 @@ export const getDiffUntilDate = function getDiffUntilDate(targetDate: string): T
   };
 };
 
+export const isDateInThePast = function isDateInThePast(timeDiff: TimeDiff) {
+  return parseInt(timeDiff.days, 10) < 0;
+};
+
 /**
  * Formats a time difference, based on a template.
  *
@@ -57,8 +66,20 @@ export const formatTimeDiff = function formatTimeDiff(
 ): string {
   switch (format) {
     case 'days':
+      if (isDateInThePast(timeDiff)) {
+        return PAST_DAYS_DIFF_TEMPLATE.replace(
+          '%daysToken%',
+          Math.abs(parseInt(timeDiff.days, 10)).toString()
+        );
+      }
       return DAYS_DIFF_TEMPLATE.replace('%daysToken%', timeDiff.days);
     case 'days+hours':
+      if (isDateInThePast(timeDiff)) {
+        return PAST_DAYS_HOURS_DIFF_TEMPLATE.replace(
+          '%daysToken%',
+          Math.abs(parseInt(timeDiff.days, 10)).toString()
+        ).replace('%hoursToken%', timeDiff.hours);
+      }
       return DAYS_HOURS_DIFF_TEMPLATE.replace('%daysToken%', timeDiff.days).replace(
         '%hoursToken%',
         timeDiff.hours

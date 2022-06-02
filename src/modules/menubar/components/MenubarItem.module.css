@@ -9,11 +9,13 @@
   align-items: center;
   justify-content: center;
 }
+.menubarItem > svg {
+  stroke: #8a8f98;
+}
 .menubarItem:nth-last-child(2) {
   margin-top: auto;
 }
-.menubarItem:hover {
-  background-color: var(--main-menubar-icon-hover-color);
-  border-radius: 0.428rem;
+.menubarItem:hover > svg {
+  stroke: #9281F7;
 }
 /* End Menu Bar Item */

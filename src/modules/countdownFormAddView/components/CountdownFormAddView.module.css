@@ -1,28 +1,33 @@
 /* Go Back */
 .backContainer {
+  align-items: center;
+  color: var(--gray);
+  cursor: pointer;
   display: flex;
   margin-bottom: 16px;
-  align-items: center;
-  cursor: pointer;
+}
+.backContainer:hover {
+  color: var(--white);
 }
 .backContainer > svg {
-  color: var(--main-icons-color);
+  color: var(--white);
 }
 .backContainer > span {
-  margin-left: 8px;
   font-size: 12px;
+  margin-left: 8px;
 }
 /* End Go Back */
 
 /* Title + Subtitle */
 .title {
-  margin-bottom: 5px;
+  color: var(--pink);
   font-weight: 600;
-  color: var(--main-header-text-color);
   letter-spacing: -1;
+  margin-bottom: 5px;
 }
 .subtitle {
-  margin-bottom: 20px;
+  color: var(--gray);
   font-size: 12px;
+  margin-bottom: 20px;
 }
 /* Title + Subtitle */

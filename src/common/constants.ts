@@ -5,7 +5,9 @@ export const LOCAL_STORAGE_STATE_KEY = 'amelia-state';
 
 // String Templates - Time Diff
 export const DAYS_DIFF_TEMPLATE = '%daysToken% days';
+export const PAST_DAYS_DIFF_TEMPLATE = '%daysToken% days ago';
 export const DAYS_HOURS_DIFF_TEMPLATE = '%daysToken% days %hoursToken% hours';
+export const PAST_DAYS_HOURS_DIFF_TEMPLATE = '%daysToken% days %hoursToken% hours ago';
 
 // Menu Bar - Options
 export const MENUBAR_OPTIONS = [

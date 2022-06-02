@@ -53,7 +53,9 @@ function WidgetsList() {
             className={widgetsListItemClasses}
             key={widget.name}
             onClick={() => {
-              handleListItemClick(widget.name);
+              if (widget.status === 1) {
+                handleListItemClick(widget.name);
+              }
             }}>
             {widgetsIcons[widget.name]}
             <span>{widget.title}</span>

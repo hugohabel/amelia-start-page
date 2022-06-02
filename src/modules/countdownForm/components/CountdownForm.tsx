@@ -1,9 +1,11 @@
 // External Dependencies
+import { useState } from 'react';
 import { FormControlLabel, Radio, RadioGroup } from '@material-ui/core';
 import * as Yup from 'yup';
 import { useFormik } from 'formik';
 import { v4 as uuidv4 } from 'uuid';
 import dayjs from 'dayjs';
+import EmojiPicker, { IEmojiData } from 'emoji-picker-react';
 
 // Internal Dependencies
 import { CountdownFormat } from '../../../common/types/amelia';
@@ -21,7 +23,22 @@ import sharedStyles from '../../../common/styles/Shared.module.css';
  * @returns JSX
  */
 function CountdownForm() {
+  // Component's State
+  const [chosenEmoji, setChosenEmoji] = useState<IEmojiData>();
+  const [displayEmojiPicker, setDisplayEmojiPicker] = useState(false);
+
+  // Hooks
   const dispatch = useAppDispatch();
+
+  // Handlers
+  const onEmojiClickHandler = (event: any, emojiObject: IEmojiData) => {
+    setChosenEmoji(emojiObject);
+    setDisplayEmojiPicker(false);
+  };
+
+  const onEmojiPlaceholderClick = () => {
+    setDisplayEmojiPicker(true);
+  };
 
   // Form rules and validations (Managed with Formik)
   const formik = useFormik({
@@ -44,6 +61,7 @@ function CountdownForm() {
           name: values.eventName,
           date: dayjs(values.eventDate).toISOString(),
           format: values.eventFormat as CountdownFormat,
+          emoji: chosenEmoji?.emoji || '💡',
         },
       });
       dispatch({
@@ -55,21 +73,42 @@ function CountdownForm() {
 
   return (
     <form onSubmit={formik.handleSubmit} autoComplete="off">
-      {/* Event Name + Error Display */}
-      <input
-        type="text"
-        id="eventName"
-        name="eventName"
-        placeholder="Event name"
-        onChange={formik.handleChange}
-        value={formik.values.eventName}
-      />
+      <div className={styles.inputContainer}>
+        <div onClick={onEmojiPlaceholderClick} className={styles.emojiPlaceholder}>
+          {chosenEmoji ? chosenEmoji?.emoji : '💡'}
+        </div>
+        {/* Event Name + Error Display */}
+        <input
+          type="text"
+          id="eventName"
+          name="eventName"
+          placeholder="Event name"
+          className={styles.eventNameInput}
+          onChange={formik.handleChange}
+          value={formik.values.eventName}
+        />
+        {/* End Event Name + Error Display */}
+      </div>
       {formik.touched.eventName && formik.errors.eventName ? (
         <div className={`${styles.formError} ${sharedStyles.errorText}`}>
           {formik.errors.eventName}
         </div>
       ) : null}
-      {/* End Event Name + Error Display */}
+      {displayEmojiPicker && (
+        <EmojiPicker
+          pickerStyle={{
+            'box-shadow': 'none',
+            width: '328px',
+            'font-family': 'PT Sans',
+            'margin-bottom': '16px',
+            background: '#414558',
+            color: '#FFFFFF',
+            border: '1px solid transparent',
+          }}
+          onEmojiClick={onEmojiClickHandler}
+          disableSearchBar
+        />
+      )}
 
       {/* Event Date + Error Display */}
       <input
@@ -88,7 +127,7 @@ function CountdownForm() {
       {/* End Event Date + Error Display */}
 
       {/* Event Format */}
-      <h4>How do you want to display the countdown?</h4>
+      <h4 className={styles.subtitle}>How do you want to display the countdown?</h4>
       <RadioGroup
         defaultValue={formik.initialValues.eventFormat}
         value={formik.values.eventFormat.toString()}
@@ -97,8 +136,16 @@ function CountdownForm() {
         onChange={(event) => {
           formik.setFieldValue('eventFormat', event.currentTarget.value);
         }}>
-        <FormControlLabel value="days+hours" control={<Radio />} label="Days and Hours" />
-        <FormControlLabel value="days" control={<Radio />} label="Days" />
+        <FormControlLabel
+          value="days+hours"
+          control={<Radio style={{ color: '#9580FF' }} />}
+          label="Days and Hours"
+        />
+        <FormControlLabel
+          value="days"
+          control={<Radio style={{ color: '#9580FF' }} />}
+          label="Days"
+        />
       </RadioGroup>
       {/* End Event Format */}
 

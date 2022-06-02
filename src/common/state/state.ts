@@ -29,6 +29,7 @@ export const initialAppState: IAppState = {
             name: 'Christmas',
             date: '2021-12-25T05:00:00.000Z',
             background: '',
+            emoji: '🎄',
           },
         ],
       },

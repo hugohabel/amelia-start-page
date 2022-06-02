@@ -1,23 +1,22 @@
 /* Side Bar */
 .sidebar {
-  background-color: var(--main-bg-color);
-  width: 0;
-  height: 100vh;
-  box-shadow: -3px 0px 8px 2px rgba(201, 201, 201, 0.75) inset;
+  background-color: var(--dark-jungle);
   display: flex;
   flex-direction: column;
+  height: 100vh;
   padding: 5rem 0;
-  transition: width 0.3s;
   position: relative;
+  transition: width 0.3s;
+  width: 0;
 }
 .isSidebarOpen {
-  width: 376px;
   transition: width 0.5s;
+  width: 376px;
 }
 .sidebarInnerContainer {
+  opacity: 0;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  opacity: 0;
 }
 .sidebarInnerContainerOpen {
   opacity: 1;
@@ -28,11 +27,15 @@
   display: none;
 }
 .isSidebarOpen .sidebarCloseIcon {
+  color: var(--steel);
+  cursor: pointer;
   display: block;
-  width: 16px;
   position: absolute;
   right: 16px;
   top: 16px;
-  cursor: pointer;
+  width: 16px;
+}
+.isSidebarOpen .sidebarCloseIcon:hover {
+  color: var(--gray);
 }
 /* End Side Bar */

@@ -24,16 +24,16 @@ input, button {
   box-sizing: border-box;
 }
 body {
-  background-color: var(--main-bg-color);
+  background-color: var(--charade);
   font-family: 'PT Sans', sans-serif;
-  color: #666666;
+  color: var(--gray);
 }
 input, select {
   border-radius: 0.428rem;
-  border: 1px solid var(--main-field-border-color);
-  background: var(--main-field-bg-color);
+  border: 1px solid transparent;
+  background: var(--gun-powder);
   font-size: 14px;
-  color: var(--main-field-text-color);
+  color: var(--white);
   margin-bottom: 16px;
 }
 input {
@@ -41,36 +41,50 @@ input {
   height: 50px;
   padding: 18px 16px;
 }
+select::placeholder, input::placeholder {
+  color: var(--manatee);
+}
+input:focus {
+  border: 1px solid var(--purple);
+}
 select {
   padding: 14px 16px;
   appearance: none;
 }
 button {
   padding: 8px 16px;
-  background: var(--main-button-bg-color);
-  color: var(--main-button-text-color);
+  background: var(--purple-transparent);
+  color: var(--purple);
   border-radius: 0.428rem;
   cursor: pointer;
   border: 1px solid transparent;
   float: right;
 }
+button:hover {
+  background-color: var(--shadow);
+}
+.emoji-picker-react .emoji-group:before {
+  background: #414558 !important;
+}
 /* End Global Styles */
 
 /* Color Palette */
 :root {
-  --main-bg-color-primary: #FFFFFF;
-  --main-bg-color: #F7F7F7;
-  --main-text-color: #7367f0;
-  --main-widget-bg-color: #FFFFFF;
-  --main-widget-text-color: #5E5873;
-  --main-text-color-error: #E13A38;
-  --main-button-bg-color: #7367f0;
-  --main-button-text-color: #FFFFFF;
-  --main-header-text-color: #5E5873;
-  --main-field-text-color: #505D6D;
-  --main-field-bg-color: #FFFFFF;
-  --main-field-border-color: #D8D6DE;
-  --main-icons-color: #FF9F43;
-  --main-menubar-icon-hover-color: #F5F5F5;
+  --charade: #282A35;
+  --cyan: #92FFFF;
+  --dark-jungle: #1D1E24;
+  --gray: #8B8F97;
+  --gun-powder: #414558;
+  --lime: #8AFF80;
+  --manatee: #9599AD;
+  --pink: #FF80BF;
+  --purple: #9580FF;
+  --purple-transparent: rgba(149,128,255,0.1);
+  --shadow: hsla(0,0%,100%,.1);
+  --steel: #666666;
+  --tangerine: #FF9580;
+  --topaz: #FFCA80;
+  --white: #FFFFFF;
+  --yellow: #FFFF80;
 }
 /* End Color Palette */

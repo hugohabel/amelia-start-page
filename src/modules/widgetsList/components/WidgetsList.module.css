@@ -1,45 +1,52 @@
 /* Widgets List */
-.widgetsListItem {
-  background: var(--main-bg-color-primary);
-  padding: 16px 24px;
-  border-radius: .428rem;
-  line-height: 20px;
-  display: flex;
-  cursor: pointer;
+.widgetsListTitle {
+  color: var(--pink);
+  font-weight: 600;
+  letter-spacing: -1;
+  margin-bottom: 5px;
+}
+.widgetsListSubtitle {
+  color: var(--grey);
+  font-size: 12px;
   margin-bottom: 20px;
+}
+.widgetsListItem {
+  background: var(--charade);
+  border-radius: .428rem;
   border: 1px solid transparent;
+  box-shadow: 0px 10px 20px RGBA(146, 255, 255, 0.2);
+  color: var(--white);
+  cursor: pointer;
+  display: flex;
+  line-height: 20px;
+  margin-bottom: 20px;
+  padding: 16px 24px;
+}
+.widgetsListItem:hover {
+  border: 1px solid var(--cyan);
+  box-shadow: none;
 }
 .widgetsListItem > svg {
-  color: var(--main-icons-color);
+  color: var(--purple);
   margin-right: 8px;
 }
 .widgetsListItemHidden {
   display: none;
 }
 .widgetsListItemUpcoming {
-  color: #CCCCCC;
-  cursor: auto;
+  color: var(--white);
+  cursor: progress;
 }
 .widgetsListItemUpcoming > svg {
-  color: var(--main-icons-color);
+  color: var(--purple);
 }
 .widgetsListItemUpcomingTitle {
-  color: var(--main-text-color);
-  margin-left: 10px;
-  background: #FFEACA;
-  padding: 0px 8px;
+  border: 1px solid var(--cyan);
   border-radius: 0.428rem;
+  color: var(--cyan);
   font-size: 12px;
   font-weight: bold;
-}
-.widgetsListTitle {
-  margin-bottom: 5px;
-  font-weight: 600;
-  color: var(--main-header-text-color);
-  letter-spacing: -1;
-}
-.widgetsListSubtitle {
-  margin-bottom: 20px;
-  font-size: 12px;
+  margin-left: 10px;
+  padding: 0px 8px;
 }
 /* End Widgets List */

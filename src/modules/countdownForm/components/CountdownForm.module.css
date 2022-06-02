@@ -9,3 +9,26 @@
   font-size: 14px;
   margin-left: 8px;
 }
+.subtitle {
+  color: var(--white);
+}
+.inputContainer {
+  display: flex;
+}
+.emojiPlaceholder {
+  background-color: var(--gun-powder);
+  border-radius: 0.428rem;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 30px;
+  text-align: center;
+  padding-top: 8px;
+  height: 50px;
+  margin-bottom: 16px;
+  margin-right: 16px;
+  width: 50px;
+}
+.eventNameInput {
+  display: inline-block;
+  width: calc(100% - 66px);
+}

@@ -1,6 +1,6 @@
 .mainText {
-  color: var(--main-text-color);
+  color: var(--gray);
 }
 .errorText {
-  color: var(--main-text-color-error);
+  color: var(--tangerine);
 }

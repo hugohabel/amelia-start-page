@@ -33,7 +33,8 @@ function Home() {
             <CountdownWidget
               eventName={countdownEvent.name}
               eventDate={countdownEvent.date}
-              eventFormat={countdownEvent?.format ?? 'days+hours'}
+              eventFormat={countdownEvent?.format ?? 'days'}
+              eventEmoji={countdownEvent.emoji}
             />
           </Widget>
         );
@@ -63,7 +64,9 @@ function Home() {
       <div className="container">
         <main className="main">{myWidgets}</main>
 
-        <span className="imageAttribution">Hand-crafted & Made with </span>
+        <span className="attribution">
+          Hand-crafted & Made with <span>♡</span> in Mexico
+        </span>
       </div>
       {/* End Main Container */}
     </div>

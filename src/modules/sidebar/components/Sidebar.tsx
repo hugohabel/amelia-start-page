@@ -1,11 +1,9 @@
-// External Dependencies
-import CancelOutlinedIcon from '@material-ui/icons/CancelOutlined';
-
 // Internal Dependencies
 import { MENUBAR, ACTIONS } from '../../../common/constants';
 import { useAppState, useAppDispatch } from '../../../common/contexts/AppState';
 import { WidgetsList } from '../../widgetsList/components/WidgetsList';
 import CountdownFormAddView from '../../countdownFormAddView/components/CountdownFormAddView';
+import { CloseIcon } from '../../../common/components/icons/CloseIcon';
 
 // Types
 import { ISidebar } from '../../../common/types/AppState';
@@ -81,7 +79,7 @@ function Sidebar() {
         data-testid="close-sidebar"
         className={styles.sidebarCloseIcon}
         onClick={() => handleCloseIconClick()}>
-        <CancelOutlinedIcon fontSize="small" />
+        <CloseIcon />
       </div>
       {/* End Close Icon */}
 

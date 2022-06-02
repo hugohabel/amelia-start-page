@@ -1,6 +1,10 @@
 // Internal Dependencies
 import { CountdownFormat } from '../../../common/types/amelia';
-import { getDiffUntilDate, formatTimeDiff } from '../utils/timeCalculations/timeCalculations';
+import {
+  getDiffUntilDate,
+  formatTimeDiff,
+  isDateInThePast,
+} from '../utils/timeCalculations/timeCalculations';
 
 // Styles
 import styles from './CountdownWidget.module.css';
@@ -11,6 +15,7 @@ interface ICountdownWidgetProps {
   eventName: string;
   eventDate: string;
   eventFormat: CountdownFormat;
+  eventEmoji: string;
 }
 
 /**
@@ -19,11 +24,13 @@ interface ICountdownWidgetProps {
  * @param params ICountdownWidgetProps
  * @returns JSX
  */
-function CountdownWidget({ eventDate, eventName, eventFormat }: ICountdownWidgetProps) {
+function CountdownWidget({ eventDate, eventName, eventFormat, eventEmoji }: ICountdownWidgetProps) {
+  let isEventInThePast = false;
   let formattedOutput = '';
 
   try {
     const timeDiff = getDiffUntilDate(eventDate);
+    isEventInThePast = isDateInThePast(timeDiff);
     formattedOutput = formatTimeDiff(timeDiff, eventFormat);
   } catch (err) {
     // logError(err.message);
@@ -31,8 +38,8 @@ function CountdownWidget({ eventDate, eventName, eventFormat }: ICountdownWidget
 
   return (
     <div className={styles.countdownWidget}>
-      <h3>{eventName}</h3>
-      <p className={styles.separatorWord}>in</p>
+      <h3>{`${eventEmoji} ${eventName}`}</h3>
+      <p className={styles.separatorWord}>{!isEventInThePast && `in`}</p>
       <h2 className={sharedStyles.mainText}>{formattedOutput}</h2>
     </div>
   );
