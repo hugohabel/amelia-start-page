@@ -5,6 +5,7 @@ import {
   formatTimeDiff,
   isDateInThePast,
 } from '../utils/timeCalculations/timeCalculations';
+import { log } from '../../../common/utils/logs/logs';
 
 // Styles
 import styles from './CountdownWidget.module.css';
@@ -32,8 +33,14 @@ function CountdownWidget({ eventDate, eventName, eventFormat, eventEmoji }: ICou
     const timeDiff = getDiffUntilDate(eventDate);
     isEventInThePast = isDateInThePast(timeDiff);
     formattedOutput = formatTimeDiff(timeDiff, eventFormat);
-  } catch (err) {
-    // logError(err.message);
+  } catch (err: any) {
+    log({
+      level: 'error',
+      message: err.message,
+      data: `eventDate: ${eventDate} - eventFormat: ${eventFormat}`,
+      file: 'CountdownWidget.ts',
+      location: 'CountdownWidget',
+    });
   }
 
   return (

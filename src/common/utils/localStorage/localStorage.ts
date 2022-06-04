@@ -1,5 +1,6 @@
 // Internal Dependencies
 import { LOCAL_STORAGE_VERIFICATION_KEY, LOCAL_STORAGE_VERIFICATION_VALUE } from '../../constants';
+import { log } from '../logs/logs';
 
 /**
  * Validates if window.localStorage is available.
@@ -22,13 +23,28 @@ function isLocalStorageAvailable(): boolean {
           return true;
         }
       } catch (e) {
-        // Log error + Display error to the user.
+        log({
+          level: 'error',
+          message: 'Could not write and read from local storage',
+          file: 'localStorage.ts',
+          location: 'isLocalStorageAvailable',
+        });
         return false;
       }
     }
-    // Log error + Display error to the user.
+    log({
+      level: 'error',
+      message: 'Property localStorage is not available in window object',
+      file: 'localStorage.ts',
+      location: 'isLocalStorageAvailable',
+    });
   }
-  // Log error + Display error to the user.
+  log({
+    level: 'error',
+    message: 'window object is undefined',
+    file: 'localStorage.ts',
+    location: 'isLocalStorageAvailable',
+  });
   return false;
 }
 

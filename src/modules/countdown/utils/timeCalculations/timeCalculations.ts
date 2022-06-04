@@ -86,6 +86,6 @@ export const formatTimeDiff = function formatTimeDiff(
       );
     /* istanbul ignore next */
     default:
-      return '';
+      throw new Error(`timeDiff format is not valid - timeDiff: ${timeDiff}`);
   }
 };
