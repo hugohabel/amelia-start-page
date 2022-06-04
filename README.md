@@ -12,7 +12,7 @@
   <p align="center">
     An awesome start page with several different widgets. Productivity tab for your daily use.
     <br />
-    <a href="#">View Demo</a>
+    <a href="https://hugohabel.github.io/amelia-start-page/">View Demo</a>
     ·
     <a href="https://github.com/hugohabel/amelia-start-page/issues">Report Bug</a>
     ·
