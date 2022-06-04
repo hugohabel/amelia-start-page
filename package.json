@@ -17,7 +17,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "^5.0.0",
-    "typescript": "^4.6.3",
+    "typescript": "^4.7.3",
     "uuid": "^8.3.2",
     "web-vitals": "^2.1.4",
     "yup": "^0.32.9"
@@ -28,7 +28,7 @@
     "deploy": "gh-pages -d build -r https://github.com/hugohabel/amelia-start-page.git",
     "eject": "react-scripts eject",
     "format": "prettier \"**/*.{js,json,md,ts,tsx,html}\" --write",
-    "lint": "eslint --ext js,ts,tsx,html . && tsc --pretty --noEmit",
+    "lint": "eslint --ext js,ts,tsx,html src/ && tsc --pretty --noEmit",
     "predeploy": "react-scripts build",
     "start": "react-scripts start",
     "storybook": "start-storybook -p 6006 -s public",
