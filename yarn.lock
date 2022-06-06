@@ -2768,10 +2768,21 @@
     webpack-dev-middleware "^4.1.0"
     webpack-virtual-modules "^0.4.1"
 
-"@storybook/node-logger@6.4.22", "@storybook/node-logger@^6.4.22":
+"@storybook/node-logger@6.4.22":
   version "6.4.22"
   resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-6.4.22.tgz#c4ec00f8714505f44eda7671bc88bb44abf7ae59"
   integrity sha512-sUXYFqPxiqM7gGH7gBXvO89YEO42nA4gBicJKZjj9e+W4QQLrftjF9l+mAw2K0mVE10Bn7r4pfs5oEZ0aruyyA==
+  dependencies:
+    "@types/npmlog" "^4.1.2"
+    chalk "^4.1.0"
+    core-js "^3.8.2"
+    npmlog "^5.0.1"
+    pretty-hrtime "^1.0.3"
+
+"@storybook/node-logger@^6.5.7":
+  version "6.5.7"
+  resolved "https://registry.yarnpkg.com/@storybook/node-logger/-/node-logger-6.5.7.tgz#a31d91be3cd9d9f033d340b1dc2b8e1c0de61cb6"
+  integrity sha512-OrHu5p2E5i7P2v2hQAOtZw6Od1e2nrP6L7w5SxUPgccUnKUD9dRX5Y8qbAcPZO3XCkMLjpjAbC1xBXG0eFkn9g==
   dependencies:
     "@types/npmlog" "^4.1.2"
     chalk "^4.1.0"
